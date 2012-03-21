@@ -4,6 +4,6 @@ _Written by Dan Petrie ~ Produced by Dan Syme_
 
 ----------
 
-* [Features](#features "manual/introduction/features")
-* [Download](#download "manual/introduction/download")
-* [Installation](#installation "manual/introduction/installation")
+* [Features](#features "manuals/nesty/introduction/features")
+* [Download](#download "manual/nesty/introduction/download")
+* [Installation](#installation "manuals/nesty/introduction/installation")
