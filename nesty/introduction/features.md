@@ -1,4 +1,10 @@
 ###Features
+<<<<<<< HEAD
+=======
+
+----------
+
+>>>>>>> ead29bc76f648e2cd157bd69a3b9eb0ff2c9ee9c
 Nesty has made the following features available to any object that inherits it:
 
 - Multiple root Nesty objects
