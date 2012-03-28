@@ -12,4 +12,7 @@ Nesty has made the following features available to any object that inherits it:
 
 1 For both inserting and moving Nesty objects
 
+Some new point as well
+-----
+
 ----------
