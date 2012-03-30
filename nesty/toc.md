@@ -1,8 +1,8 @@
 #The Nesty Manual
 ##A Nested Sets package built for FuelPHP.
 
-* [Introduction](/manuals/nesty/introduction/toc)
-* [Configuration](/manuals/nesty/configuration/toc)
-* [Create / Update / Delete](/manuals/nesty/cud/toc)
-* [Reading](/manuals/nesty/reading/toc)
-* [Debugging](/manuals/nesty/debugging/toc)
+* [Introduction](/manual/nesty/introduction/toc)
+* [Configuration](/manual/nesty/configuration/toc)
+* [Create / Update / Delete](/manual/nesty/cud/toc)
+* [Reading](/manual/nesty/reading/toc)
+* [Debugging](/manual/nesty/debugging/toc)
