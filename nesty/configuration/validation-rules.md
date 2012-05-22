@@ -12,7 +12,7 @@ An array of validation rules for a Nesty model to have.
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td><kbd>protected static $_rules</kbd></td>
+		<td>`protected static $_rules`</td>
 		<td>array</td>
 		<td></td>
 		<td>Validation Rules</td>

@@ -10,7 +10,7 @@
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td><kbd>protected static $_primary_key</kbd></td>
+		<td>`protected static $_primary_key`</td>
 		<td>string</td>
 		<td>id</td>
 		<td>The primary key of this table.</td>

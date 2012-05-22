@@ -16,7 +16,7 @@ This method returns the Nesty object.
 					<th>Description</th>
 				</tr>
 				<tr>
-					<td><kbd>$sibling</kbd></td>
+					<td>`$sibling`</td>
 					<td>Nesty</td>
 					<td></td>
 					<td>An instance of a Nesty object for which you want this object to be the next sibling of.</td>

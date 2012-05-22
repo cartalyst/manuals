@@ -12,17 +12,17 @@ This method is an alias for <a href="#dump-as">dump_as()</a>. This method provid
 					<th>Description</th>
 				</tr>
 				<tr>
-					<td><kbd>$format</kbd></td>
+					<td>`$format`</td>
 					<td>string</td>
 					<td></td>
 					<td>
 						The format to dump in. Can be:
 						<br>
-						<kbd>array</kbd> | <kbd>ul</kbd> | <kbd>ol</kbd> | <kbd>json</kbd> | <kbd>xml</kbd> | <kbd>serialized</kbd> | <kbd>php</kbd>
+						`array` | `ul` | `ol` | `json` | `xml` | `serialized` | `php`
 					</td>
 				</tr>
 				<tr>
-					<td><kbd>$name</kbd></td>
+					<td>`$name`</td>
 					<td>string</td>
 					<td>null</td>
 					<td>

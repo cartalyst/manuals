@@ -12,7 +12,7 @@ An associative array of key / value pairs where key / value correspond to column
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td><kbd>protected static $_labels</kbd></td>
+		<td>`protected static $_labels`</td>
 		<td>array</td>
 		<td></td>
 		<td>Validation labels</td>

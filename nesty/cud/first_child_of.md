@@ -16,7 +16,7 @@ This method returns the Nesty object.
 					<th>Description</th>
 				</tr>
 				<tr>
-					<td><kbd>$parent</kbd></td>
+					<td>`$parent`</td>
 					<td>Nesty</td>
 					<td></td>
 					<td>An instance of a Nesty object for which you want this object to be the first child of.</td>
