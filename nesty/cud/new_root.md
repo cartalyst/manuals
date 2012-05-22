@@ -2,7 +2,7 @@
 
 ----------
 
-The <kbd>new_root</kbd> method returns the Nesty object.
+The `new_root` method returns the Nesty object.
 
 <table>
 	<tr>

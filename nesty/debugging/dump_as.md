@@ -1,6 +1,6 @@
 ###dump_as($format, $name = null, $type = 'nesty')
 
-While this method is used primarily for debugging, it can be used instead of <kbd>get_children</kbd>	as a way of looping through children objects, although it is not as powerful as that method. This method currently supports dumping an object and / or it's children in the following formats:
+While this method is used primarily for debugging, it can be used instead of `get_children`	as a way of looping through children objects, although it is not as powerful as that method. This method currently supports dumping an object and / or it's children in the following formats:
 
 1.  Array
 2.  Unordered list
@@ -21,17 +21,17 @@ While this method is used primarily for debugging, it can be used instead of <kb
 					<th>Description</th>
 				</tr>
 				<tr>
-					<td><kbd>$format</kbd></td>
+					<td>`$format`</td>
 					<td>string</td>
 					<td></td>
 					<td>
 						The format to dump in. Can be:
 						<br>
-						<kbd>array</kbd> | <kbd>ul</kbd> | <kbd>ol</kbd> | <kbd>json</kbd> | <kbd>xml</kbd> | <kbd>serialized</kbd> | <kbd>php</kbd>
+						`array` | `ul` | `ol` | `json` | `xml` | `serialized` | `php`
 					</td>
 				</tr>
 				<tr>
-					<td><kbd>$name</kbd></td>
+					<td>`$name`</td>
 					<td>string</td>
 					<td>null</td>
 					<td>
@@ -39,7 +39,7 @@ While this method is used primarily for debugging, it can be used instead of <kb
 					</td>
 				</tr>
 				<tr>
-					<td><kbd>$type</kbd></td>
+					<td>`$type`</td>
 					<td>string</td>
 					<td>nesty</td>
 					<td>

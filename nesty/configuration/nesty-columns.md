@@ -2,7 +2,11 @@
 
 ----------
 
-<kbd>protected static $_nesty_cols</kbd> contains 4 properties. You can choose to customise these properties in this array and your table, should do wish to do so.
+`protected static $_nesty_cols` contains 4 properties. You can choose to customise these properties in this array and your table, should do wish to do so.
+
+Option                     | Type            | Default       | Description      
+:--------------------------- | :-------------: | :------------ | :---------------  
+`protected static $_defaults`  | array           |               | Default Values 
 
 <table>
 	<tr>

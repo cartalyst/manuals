@@ -4,7 +4,7 @@
 
 This method returns an integer; the number of records affected.
 
-> <strong>Notes:</strong> Be warned, this method will remove all children Nesty objects of the object that <kbd>delete()</kbd> is called on. In future versions we are planning to add the ability assign orphaned children to the parent of this deleted object (they will move up one level).
+> <strong>Notes:</strong> Be warned, this method will remove all children Nesty objects of the object that `delete()` is called on. In future versions we are planning to add the ability assign orphaned children to the parent of this deleted object (they will move up one level).
 
 <table>
 	<tr>
