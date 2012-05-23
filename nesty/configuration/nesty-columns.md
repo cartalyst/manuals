@@ -33,7 +33,7 @@ tree                         | string          | tree_id       | The tree identi
 		);
 
 		// Set labels for our rules
-		protected static $_lables = array(
+		protected static $_labels = array(
 			'name' => 'Name field',
 		);
 
