@@ -4,14 +4,12 @@
 
 This method returns an integer; the number of records affected.
 
-> <strong>Notes:</strong> Be warned, this method will remove all children Nesty objects of the object that `delete()` is called on. In future versions we are planning to add the ability assign orphaned children to the parent of this deleted object (they will move up one level).
+&gt; **Notes:** Be warned, this method will remove all children Nesty objects of the object that `delete()` is called on. In future versions we are planning to add the ability assign orphaned children to the parent of this deleted object (they will move up one level).
 
-<table>
-	<tr>
-		<th>Returns</th>
-		<td>Int</td>
-	</tr>
-</table>
+method                           | returns              
+:------------------------------- | :------------- 
+`delete()`  | Int
+
 
 #####Example:
 
@@ -21,44 +19,14 @@ This method returns an integer; the number of records affected.
 
 #####Database Table:
 
-<table>
-	<tr>
-		<th>`id`</th>
-		<th>`name`</th>
-		<th>`lft`</th>
-		<th>`rgt`</th>
-		<th>`tree_id`</th>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>Ford</td>
-		<td>1</td>
-		<td>8</td>
-		<td>1</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>Falcon</td>
-		<td>2</td>
-		<td>3</td>
-		<td>1</td>
-	</tr>
-	<tr>
-		<td>4</td>
-		<td>F150</td>
-		<td>4</td>
-		<td>5</td>
-		<td>1</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>Festiva</td>
-		<td>6</td>
-		<td>7</td>
-		<td>1</td>
-	</tr>
-</table>
-
+  id        | name      | lft         | rgt         | tree_id
+  :-------- | :-------- | :---------: | :---------: | :------:
+  1         | Ford      | 1           | 8           | 1
+  2         | Falcon    | 2           | 3           | 1
+  4         | F150      | 4           | 5           | 1
+  5         | Festiva   | 6           | 7           | 1
+  
+  
 #####Nested Structure:
 
 	Ford
