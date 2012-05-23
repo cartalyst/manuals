@@ -5,33 +5,15 @@ The `get_children` method returns an array of children Nesty objects for the Nes
 
 > <strong>Notes:</strong>	This method alone demonstrates one of the best features of the <strong>modified preorder tree traversal algorithm</strong> (the nested sets pattern Nesty uses). We can recursively grab every single child Nesty using the one database query! What does this mean? It's super fast!
 
-> Typically, you would normally call `get_children()` with no parameters, which will recursively nest children objects within this object. That way, every `get_children()` call on child objects doesn't require a second database call - because they've already been fetched!
+> Typically, you would normally call `children()` with no parameters, which will recursively nest children objects within this object. That way, every `children()` call on child objects doesn't require a second database call - because they've already been fetched!
 
 > The only reason you wouldn limit the depth of children found is when you know that you will not be going any deeper down the hierarchy tree. This is to simply save on memory usage and the time taken to hydrate the children property of each Nesty object recursively.
 
-<table>
-	<tr>
-		<th>Parameters</th>
-		<td><table class="parameters">
-				<tr>
-					<th>Param</th>
-					<th>Type</th>
-					<th>Default</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td>`$limit`</td>
-					<td>int</td>
-					<td>false</td>
-					<td>The depth limit of children to hydrate. False hydrates all depths.</td>
-				</tr>
-			</table></td>
-	</tr>
-	<tr>
-		<th>Returns</th>
-		<td>array()</td>
-	</tr>
-</table>
+Option                       | Type            | Default       | Description      
+:--------------------------- | :-------------: | :------------ | :---------------  
+`$limit`                     | string          | false         | The depth limit of children to hydrate. `false` (default) returns all children.
+`$columns`                   | array           | array('*')    | Array of columns to select for children. Defaults to all columns.
+
 
 ###Examples:
 
