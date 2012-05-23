@@ -2,8 +2,17 @@
 
 ----------
 
-Once downloaded, you may want to add nesty to the always load packages array in 'app/config.php'.
+Once downloaded, you will need to register the bundle with Laravel. PUll open your **application/bundles.php** file. This is where you register all bundles used by your application. Let's add Nesty:
 
-If you don't do this, you will need to call Package::load('nesty'); to register the package with FuelPHP. This is the most efficient way to use any package, as you are only loading the package on requests when you are using it. This only needs to be called once per request.
+**Registering Nesty:**
+
+    return array(
+    
+    	// array('auto' => true) will
+    	// automatically start the bundle.
+    	'nesty' => array('auto' => true),
+    );
+
+>Notes: If you don't want to automatically start the Nesty bundle, visit [here](http://laravel.com/docs/bundles#starting-bundles) to learn how to manually start bundles.
 
 ----------
