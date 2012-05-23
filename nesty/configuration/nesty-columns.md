@@ -4,42 +4,13 @@
 
 `protected static $_nesty_cols` contains 4 properties. You can choose to customise these properties in this array and your table, should do wish to do so.
 
-Option                     | Type            | Default       | Description      
+Option                       | Type            | Default       | Description      
 :--------------------------- | :-------------: | :------------ | :---------------  
-`protected static $_defaults`  | array           |               | Default Values 
+left                         | string          | lft           | The left-hand identifier for a Nesty object
+right                        | string          | rgt           | The right-hand identifier for a Nesty object
+name                         | string          | name          | The name property for a Nesty object. Typically used for the label of a Nesty object when displaying.
+tree                         | string          | tree_id       | The tree identifier for a Nesty object. (Nesty supports multiple trees in one table) 
 
-<table>
-	<tr>
-		<th>Option</th>
-		<th>Type</th>
-		<th>Default</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>left</td>
-		<td>string</td>
-		<td>lft</td>
-		<td>The left-hand identifier for a Nesty object</td>
-	</tr>
-	<tr>
-		<td>right</td>
-		<td>string</td>
-		<td>rgt</td>
-		<td>The right-hand identifier for a Nesty object</td>
-	</tr>
-	<tr>
-		<td>name</td>
-		<td>string</td>
-		<td>name</td>
-		<td>The name property for a Nesty object. Typically used for the label of a Nesty object when displaying</td>
-	</tr>
-	<tr>
-		<td>tree</td>
-		<td>string</td>
-		<td>tree_id</td>
-		<td>The tree identifier for a Nesty object (Nesty supports multiple trees in the one table)</td>
-	</tr>
-</table>
 
 #####Example of a typical Nesty Model:
 
