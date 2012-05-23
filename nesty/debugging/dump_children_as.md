@@ -1,38 +1,12 @@
 ###dump_children_as($format, $name = null)
 
-This method is an alias for <a href="#dump-as">dump_as()</a>. This method provides 'children' as the third parameter for that method, saving you writing it each time.
-<table>
-	<tr>
-		<th>Parameters</th>
-		<td><table class="parameters">
-				<tr>
-					<th>Param</th>
-					<th>Type</th>
-					<th>Default</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td>`$format`</td>
-					<td>string</td>
-					<td></td>
-					<td>
-						The format to dump in. Can be:
-						<br>
-						`array` | `ul` | `ol` | `json` | `xml` | `serialized` | `php`
-					</td>
-				</tr>
-				<tr>
-					<td>`$name`</td>
-					<td>string</td>
-					<td>null</td>
-					<td>
-						The name of the property to use for each dumped item. Defaults to the <a href="#configure-nesty-cols">name nesty column</a>. A closure can be provided as this parameter. The closure takes one parameter, the Nesty object that's being dumped at that point in time.
-					</td>
-				</tr>
-			</table></td>
-	</tr>
-	<tr>
-		<th>Returns</th>
-		<td>mixed</td>
-	</tr>
-</table>
+This method is just an alias for `dump_as`, providing `children` as the third parameter to specify that we only want to dump the children of the Nesty model on which the method is called, not that Nesty model itself.
+
+Returns                          |
+:------------------------------- |
+string \| array                  |
+
+Parameters                       | Type              | Default       | Description      
+:------------------------------- | :-------------:   | :------------ | :---------------  
+`$format`                        | string            |               | Format to dump as (see documentation for `dump_as`)
+`$name`                          | string \| Closure | null          | Name of each object when it's dumped. Defaults to the `name` nesty column defined in your **configuration**. Alternatively, a closure may be provided which takes the Nesty object as it's parameter and must return a string for the `name`.

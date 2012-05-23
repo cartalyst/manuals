@@ -38,7 +38,10 @@ This method returns the Nesty object.
 
 	try
 	{
-		$territory = Model_Car::find_one_by_name('Territory');
+		$territory = Model_Car::find(function($query)
+		{
+			return $query->where('name', '=', 'Territory');
+		});
 
 		$f150 = Model_Car::forge(array(
 			'name' => 'F150',

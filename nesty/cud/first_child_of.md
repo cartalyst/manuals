@@ -17,7 +17,11 @@ Parameters                       | Type            | Default       | Description
 
 	try
 	{
-		$ford = Model_Car::find_one_by_name('Ford');
+		// Get ford
+		$ford = Model_Car::find(function($query)
+		{
+			return $query->where('name', '=', 'Ford');
+		});
 
 		$falcon = Model_Car::forge(array(
 			'name' => 'Falcon',

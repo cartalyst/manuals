@@ -1,63 +1,37 @@
 ###dump_as($format, $name = null, $type = 'nesty')
 
-While this method is used primarily for debugging, it can be used instead of `get_children`	as a way of looping through children objects, although it is not as powerful as that method. This method currently supports dumping an object and / or it's children in the following formats:
+Depending on the format provided, this method returns a variety of data types. While this method is used primarily for debugging, it can be used instead of `children` as a way of iterating through children objects, although it is not as powerful as `children`.
 
-1.  Array
-2.  Unordered list
-3.  Ordered list
-4.  JSON string
-5.  XML string
-6.  Serialised PHP array
-7.  PHP code (can be used with <a href="http://php.net/manual/en/function.eval.php" target="_blank">eval()</a> for example)
+Returns                          | Throws 
+:------------------------------- | :-------------
+string \| array                  | NestyException
 
-<table>
-	<tr>
-		<th>Parameters</th>
-		<td><table class="parameters">
-				<tr>
-					<th>Param</th>
-					<th>Type</th>
-					<th>Default</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td>`$format`</td>
-					<td>string</td>
-					<td></td>
-					<td>
-						The format to dump in. Can be:
-						<br>
-						`array` | `ul` | `ol` | `json` | `xml` | `serialized` | `php`
-					</td>
-				</tr>
-				<tr>
-					<td>`$name`</td>
-					<td>string</td>
-					<td>null</td>
-					<td>
-						The name of the property to use for each dumped item. Defaults to the <a href="#configure-nesty-cols">name nesty column</a>. A closure can be provided as this parameter. The closure takes one parameter, the Nesty object that's being dumped at that point in time.
-					</td>
-				</tr>
-				<tr>
-					<td>`$type`</td>
-					<td>string</td>
-					<td>nesty</td>
-					<td>
-						The type of dumping we're doing. Either 'nesty' or 'children'. Nesty will dump the current nesty as the top level object and children as a sub-property of that object. Children will start the process with the children of the current Nesty and skip dumping it.
-					</td>
-				</tr>
-			</table></td>
-	</tr>
-	<tr>
-		<th>Returns</th>
-		<td>mixed</td>
-	</tr>
-</table>
 
-#####Examples:
+Parameters                       | Type              | Default       | Description      
+:------------------------------- | :-------------:   | :------------ | :---------------  
+`$format`                        | string            |               | Format to dump as (see below)
+`$name`                          | string \| Closure | null          | Name of each object when it's dumped. Defaults to the `name` nesty column defined in your **configuration**. Alternatively, a closure may be provided which takes the Nesty object as it's parameter and must return a string for the `name`.
+`$type`                          | string            | nesty         | The type of dump to performm. Either `nesty` or `children`. Nesty will dump the object that `dump_as` is called on as well as it's children, `children` will dump the children only.
+
+This method currently supports dumping an object and / or it's children in the following formats:
+
+Format     | Description
+:--------- | :---------------------------------
+array      | An array containing dumped objects
+ul         | Unordered list `<ul>`
+ol         | Ordered list `<ol>`
+json       | JSON string
+serialized | Serialized PHP array
+php        | String representing PHP code - could use with [`eval()`](http://php.net/manual/en/function.eval.php)
+
+
+####Example 1:
 
 	// Get ford
-	$ford = Model_Car::find_one_by_name('Ford');
+	$ford = Model_Car::find(function($query)
+	{
+		return $query->where('name', '=', 'Ford');
+	});
 
 	// Dump ford
 	$ford->dump_as('array');
@@ -90,15 +64,20 @@ While this method is used primarily for debugging, it can be used instead of `ge
 
 #####Outputs:
 
-*   Ford
-    *   Falcon
-    *   F150
-    *   Territory
-        *   TX
-    *   Festiva
+* Ford
+  * Falcon
+  * F150
+  * Territory
+    * TX
+  * Festiva
+
+####Example 2:
 
 	// Get ford
-	$ford = Model_Car::find_one_by_name('Ford');
+	$ford = Model_Car::find(function($query)
+	{
+		return $query->where('name', '=', 'Ford');	
+	});
 
 	// Dump ford
 	$ford->dump_as('ol', function($nesty)
@@ -108,9 +87,9 @@ While this method is used primarily for debugging, it can be used instead of `ge
 
 #####Outputs:
 
-1.  Car #1: Name: Ford
-    1.  Car #2: Name: Falcon
-    2.  Car #4: Name: F150
-    3.  Car #3: Name: Territory
-        1.  Car #6: Name: TX
-    4.  Car #5: Name: Festiva
+1. Car #1: Name: Ford
+   1. Car #2: Name: Falcon
+   2. Car #4: Name: F150
+   3. Car #3: Name: Territory
+      1. Car #6: Name: TX
+   4. Car #5: Name: Festiva

@@ -14,7 +14,7 @@ Returns                          |
 array                            |
 
 
-Option                       | Type            | Default       | Description      
+Parameters                   | Type            | Default       | Description      
 :--------------------------- | :-------------: | :------------ | :---------------  
 `$limit`                     | string          | false         | The depth limit of children to hydrate. `false` (default) returns all children.
 `$columns`                   | array           | array('*')    | Array of columns to select for children. Defaults to all columns.
@@ -23,7 +23,10 @@ Option                       | Type            | Default       | Description
 ###Examples:
 
 	// Get ford
-	$ford = Model_Car::find_one_by_name('Ford');
+	$ford = Model_Car::find(function($query)
+	{
+		return $query->where('name', '=', 'Ford')
+	});
 
 	// Print children objects
 	print_r($ford->get_children());

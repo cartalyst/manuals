@@ -10,6 +10,6 @@ Returns                          |
 :------------------------------- |
 array                            |
 
-Option                       | Type            | Default       | Description      
+Parameters                   | Type            | Default       | Description      
 :--------------------------- | :-------------: | :------------ | :---------------  
 `$columns`                   | array           | array('*')    | Array of columns to select for children. Defaults to all columns.

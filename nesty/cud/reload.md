@@ -20,7 +20,10 @@ This method returns the Nesty object.
 #####Examples:
 
 	// Find the Ford Territory
-	$territory = Model_Car::find_one_by_name('Territory');
+	$territory = Model_Car::find(function($query)
+	{
+		return $query->where('name', '=', 'Territory');
+	});
 
 	/**
 	 * Add a child ($t4)...
