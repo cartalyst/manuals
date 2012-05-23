@@ -9,6 +9,11 @@ The `get_children` method returns an array of children Nesty objects for the Nes
 
 > The only reason you wouldn limit the depth of children found is when you know that you will not be going any deeper down the hierarchy tree. This is to simply save on memory usage and the time taken to hydrate the children property of each Nesty object recursively.
 
+Returns                          |
+:------------------------------- |
+array                            |
+
+
 Option                       | Type            | Default       | Description      
 :--------------------------- | :-------------: | :------------ | :---------------  
 `$limit`                     | string          | false         | The depth limit of children to hydrate. `false` (default) returns all children.
