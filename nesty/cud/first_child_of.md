@@ -2,15 +2,7 @@
 
 ---------
 
-This method returns the Nesty object.
-
-Returns                          | Throws 
-:------------------------------- | :-------------
-Int                              | NestyException
-
-Parameters                       | Type            | Default       | Description      
-:------------------------------- | :-------------: | :------------ | :---------------  
-`$parent`                        | Nesty           |               | An instance of a Nesty object for which you want this object to be the first child of.
+`first_child_of(Nesty &amp;$parent)` This method assigns a Nesty Object to a parent.
 
 
 #####Examples:
