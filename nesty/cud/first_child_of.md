@@ -2,7 +2,10 @@
 
 ---------
 
-`first_child_of(Nesty &amp;$parent)` This method assigns a Nesty Object to a parent.
+This method assigns a Nesty object to a parent Nesty object. `$parent` being an instance of a Nesty object for which you want this object to be the first child of.
+
+**Returns:** Int
+**Throws:** NestyException
 
 
 #####Examples:
