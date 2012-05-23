@@ -2,19 +2,9 @@
 
 ----------
 
-This is the table name that this Nesty model uses in the database.</p>
+This is the table name that this Nesty model uses in the database.
 
-<table>
-	<tr>
-		<th>Property</th>
-		<th>Type</th>
-		<th>Default</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>`protected static $_table_name`</td>
-		<td>string</td>
-		<td></td>
-		<td>Name of the table name.</td>
-	</tr>
-</table>
+Property                         | Type            | Default       | Description      
+:------------------------------- | :-------------: | :------------ | :---------------  
+`protected static $_table_name`  | string          |               | The name of your database table. 
+
