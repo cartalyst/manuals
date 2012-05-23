@@ -2,13 +2,19 @@
 
 ---------
 
-This method assigns a Nesty object to a parent Nesty object.
+Assigns a Nesty object to a parent Nesty object.
 
-**Parameters:** `$parent` An instance of a Nesty Object to be the first child of.
+**Parameters:**
 
-**Returns:** Int
+  Parameter  | Type      | Default     | Description
+  :--------- | :-------- | :---------: | :----------: |
+  $parent    | Nesty     |             | An instance of a Nesty Object to be the first child of. |
 
-**Throws:** NestyException
+**Returns:** 
+Int
+
+**Throws:** 
+NestyException
 
 
 #####Examples:
