@@ -36,29 +36,11 @@ Parameters                       | Type            | Default       | Description
 
 #####Database Table:
 
-<table>
-	<tr>
-		<th>`id`</th>
-		<th>`name`</th>
-		<th>`lft`</th>
-		<th>`rgt`</th>
-		<th>`tree_id`</th>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>Ford</td>
-		<td>1</td>
-		<td>4</td>
-		<td>1</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>Falcon</td>
-		<td>2</td>
-		<td>3</td>
-		<td>1</td>
-	</tr>
-</table>
+  id        | name      | lft         | rgt         | tree_id
+  :-------- | :-------- | :---------: | :---------: | :------:
+  1         | Ford      | 1           | 8           | 1
+  2         | Falcon    | 2           | 3           | 1
+
 
 #####Nested Structure:
 
