@@ -4,35 +4,14 @@
 
 This method returns the Nesty object.
 
-<table>
-	<tr>
-		<th>Parameters</th>
-		<td>
-			<table class="parameters">
-				<tr>
-					<th>Param</th>
-					<th>Type</th>
-					<th>Default</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td>`$parent`</td>
-					<td>Nesty</td>
-					<td></td>
-					<td>An instance of a Nesty object for which you want this object to be the first child of.</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<th>Returns</th>
-		<td>Nesty</td>
-	</tr>
-	<tr>
-		<th>Throws</th>
-		<td>NestyException</td>
-	</tr>
-</table>
+Returns                          | Throws 
+:------------------------------- | :-------------
+Int                              | NestyException
+
+Parameters                       | Type            | Default       | Description      
+:------------------------------- | :-------------: | :------------ | :---------------  
+`$parent`                        | Nesty           |               | An instance of a Nesty object for which you want this object to be the first child of.
+
 
 #####Examples:
 
