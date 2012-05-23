@@ -7,7 +7,6 @@ Nesty has quite a few configuration options out of the box. We allow for setting
 * [Primary Key](#primary-key "/manuals/nesty/configuration/primary-key")
 * [Validation Rules](#validation-rules "/manuals/nesty/configuration/validation-rules")
 * [Validation Labels](#validation-labels "/manuals/nesty/configuration/validation-labels")
-* [Default Values](#default-values "/manuals/nesty/configuration/default-values")
 * [Nesty Columns](#nesty-columns "/manuals/nesty/configuration/nesty-columns")
 * [Default Values](#default-values "/manuals/nesty/configuration/default-values")
 * [Nesty Columns](#nesty-columns "/manuals/nesty/configuration/nesty-columns")
