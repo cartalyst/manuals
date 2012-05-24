@@ -1,4 +1,4 @@
-###first_child_of(Nesty &amp;$parent)
+###first_child_of($parent)
 
 ---------
 
