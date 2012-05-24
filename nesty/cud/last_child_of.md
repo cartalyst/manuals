@@ -1,38 +1,10 @@
-###last_child_of(Nesty &amp;$parent)
+###last_child_of($parent)
 
 ----------
 
-This method returns the Nesty object.
+This method assigns an Nesty object to be the last child of the $parent parameter.
 
-<table>
-	<tr>
-		<th>Parameters</th>
-		<td>
-			<table class="parameters">
-				<tr>
-					<th>Param</th>
-					<th>Type</th>
-					<th>Default</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td>`$parent`</td>
-					<td>Nesty</td>
-					<td></td>
-					<td>An instance of a Nesty object for which you want this object to be the last child of.</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<th>Returns</th>
-		<td>Nesty</td>
-	</tr>
-	<tr>
-		<th>Throws</th>
-		<td>NestyException</td>
-	</tr>
-</table>
+The function returns integer and throws NestyException if the $parent does not exist.
 
 #####Examples:
 
