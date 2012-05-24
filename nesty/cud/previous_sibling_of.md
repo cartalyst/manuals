@@ -1,38 +1,10 @@
-###previous_sibling_of(Nesty &amp;$sibling)
+###previous_sibling_of($sibling)
 
 ----------
 
-This method returns the Nesty object.
+This method assigns an Nesty object for which you want this object to be the previous `$sibling` of.
 
-<table>
-	<tr>
-		<th>Parameters</th>
-		<td>
-			<table class="parameters">
-				<tr>
-					<th>Param</th>
-					<th>Type</th>
-					<th>Default</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td>`$sibling`</td>
-					<td>Nesty</td>
-					<td></td>
-					<td>An instance of a Nesty object for which you want this object to be the previous sibling of.</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<th>Returns</th>
-		<td>Nesty</td>
-	</tr>
-	<tr>
-		<th>Throws</th>
-		<td>NestyException</td>
-	</tr>
-</table>
+The function returns `Nesty` and throws `NestyException` only if the `$sibling` does not exist.
 
 #####Examples:
 
