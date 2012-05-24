@@ -2,7 +2,7 @@
 
 ----------
 
-This method assigns an Nesty object for which you want this object to be the next sibling of.
+This method assigns an Nesty object for which you want this object to be the next `$sibling` of.
 
 The function returns `Nesty` and throws `NestyException` if the `$sibling` does not exist.
 
