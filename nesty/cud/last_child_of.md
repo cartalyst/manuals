@@ -4,7 +4,7 @@
 
 This method assigns an Nesty object to be the last child of the `$parent` parameter.
 
-The function returns `integer` and throws `NestyException` if the `$parent` does not exist.
+The function returns `integer` and throws `NestyException` only if the `$parent` does not exist.
 
 #####Examples:
 
