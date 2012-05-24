@@ -2,7 +2,7 @@
 
 ----------
 
-Once downloaded, you will need to register the bundle with Laravel. PUll open your **application/bundles.php** file. This is where you register all bundles used by your application. Let's add Nesty:
+Once downloaded, you will need to register the bundle with Laravel. Open your **application/bundles.php** file. This is where you register all bundles used by your application. Let's add Nesty:
 
 **Registering Nesty:**
 
