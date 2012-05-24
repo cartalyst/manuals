@@ -24,7 +24,7 @@ The function returns `integer` and throws `NestyException` only if the `$parent`
 		 * Make first child
 		 * of Ford
 		 */
-		$ford->first_child_of($ford);
+		$falcon->first_child_of($ford);
 	}
 	catch (NestyException $e)
 	{
