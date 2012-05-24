@@ -1,6 +1,6 @@
 ####get_children($limit = false)
 
-The `get_children` method returns an array of children Nesty objects for the Nesty object on which this method was called.
+The `get_children` method returns an `array` of children Nesty objects for the Nesty object on which this method was called.
 
 
 > <strong>Notes:</strong>	This method alone demonstrates one of the best features of the <strong>modified preorder tree traversal algorithm</strong> (the nested sets pattern Nesty uses). We can recursively grab every single child Nesty using the one database query! What does this mean? It's super fast!
@@ -8,10 +8,6 @@ The `get_children` method returns an array of children Nesty objects for the Nes
 > Typically, you would normally call `children()` with no parameters, which will recursively nest children objects within this object. That way, every `children()` call on child objects doesn't require a second database call - because they've already been fetched!
 
 > The only reason you wouldn limit the depth of children found is when you know that you will not be going any deeper down the hierarchy tree. This is to simply save on memory usage and the time taken to hydrate the children property of each Nesty object recursively.
-
-Returns                          |
-:------------------------------- |
-array                            |
 
 
 Parameters                   | Type            | Default       | Description      
