@@ -4,16 +4,7 @@
 
 The `new_root` method returns the Nesty object.
 
-<table>
-	<tr>
-		<th>Returns</th>
-		<td>Nesty</td>
-	</tr>
-	<tr>
-		<th>Throws</th>
-		<td>NestyException</td>
-	</tr>
-</table>
+The function returns `Nesty` and throws `NestyException`.
 
 #####Examples:
 
