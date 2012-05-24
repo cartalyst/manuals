@@ -10,8 +10,11 @@ The function returns `INT` and throws `NestyException` if the `$parent` does not
 
 	try
 	{
-		// Get Parent
-		$ford = Model_Car::where('name', '=', 'Ford')->get();
+		// Get ford
+        $ford = Model_Car::find(function($query)
+        {
+            return $query->where('name', '=', 'Ford');
+        });
 
 		$falcon = new Model_Car(array(
 			'name' => 'Falcon',
