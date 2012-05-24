@@ -2,7 +2,7 @@
 
 -----------
 
-This method returns an integer; the number of records affected.
+This method returns an `integer`; the number of records affected.
 
 >**Notes:** Be warned, this method will remove all children Nesty objects of the object that `delete()` is called on. In future versions we are planning to add the ability assign orphaned children to the parent of this deleted object (they will move up one level).
 
