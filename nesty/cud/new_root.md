@@ -20,7 +20,7 @@ The `new_root` method returns the Nesty object.
 	// Create a new car make
 	try
 	{
-		$ford = Model_Car::forge(array(
+		$ford = new Model_Car(array(
 			'name' => 'Ford',
 		));
 

@@ -43,7 +43,7 @@ This method returns the Nesty object.
 			return $query->where('name', '=', 'Territory');
 		});
 
-		$festiva = Model_Car::forge(array(
+		$festiva = new Model_Car(array(
 			'name' => 'Festiva',
 		));
 

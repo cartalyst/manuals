@@ -27,7 +27,7 @@ NestyException
 			return $query->where('name', '=', 'Ford');
 		});
 
-		$falcon = Model_Car::forge(array(
+		$falcon = new Model_Car(array(
 			'name' => 'Falcon',
 		));
 
