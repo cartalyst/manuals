@@ -4,7 +4,7 @@
 
 This method assigns an Nesty object to be the first child of the `$parent` parameter.
 
-The function returns `INT` and throws `NestyException` if the `$parent` does not exist.
+The function returns `integer` and throws `NestyException` if the `$parent` does not exist.
 
 #####Examples:
 
@@ -16,7 +16,7 @@ The function returns `INT` and throws `NestyException` if the `$parent` does not
             return $query->where('name', '=', 'Ford');
         });
 
-		$falcon = new Model_Car(array(
+        $falcon = new Model_Car(array(
 			'name' => 'Falcon',
 		));
 
