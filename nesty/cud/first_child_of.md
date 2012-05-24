@@ -2,7 +2,7 @@
 
 ---------
 
-This method assigns any Nesty object to be the first child of the `$parent` parameter.
+This method assigns an Nesty object to be the first child of the `$parent` parameter.
 
 `first_child_of($parent);` Returns Int, Throws NestyException
 
