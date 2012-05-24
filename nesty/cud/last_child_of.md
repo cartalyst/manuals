@@ -44,7 +44,7 @@ This method returns the Nesty object.
 			return $query->where('name', '=', 'Ford');
 		});
 
-		$territory = Model_Car::forge(array(
+		$territory = new Model_Car(array(
 			'name' => 'Territory',
 		));
 
@@ -93,6 +93,7 @@ This method returns the Nesty object.
 </table>
 
 #####Nested Structure:
+
 	Ford
 	|   Falcon
 	|   Territory

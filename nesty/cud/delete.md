@@ -14,7 +14,11 @@ Int                              |
 #####Example:
 
 	// Sorry Territory, you're gone!
-	$territory = Model_Car::find_one_by_name('Territory');
+	$territory = Model_Car::find(function($query)
+	{
+		return $query->where('name', '=', 'Territory');
+	});
+	
 	$territory->delete();
 
 #####Database Table:
