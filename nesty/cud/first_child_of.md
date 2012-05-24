@@ -2,30 +2,17 @@
 
 ---------
 
-Assigns a Nesty object to a parent Nesty object.
+This method assigns any Nesty object to be the first child of `$parent` parameter.
 
-**Parameters:**
-
-  Parameter  | Type      | Default     | Description
-  :--------- | :-------- | :---------: | :----------: |
-  $parent    | Nesty     |             | An instance of a Nesty Object to be the first child of. |
-
-**Returns:** 
-Int
-
-**Throws:** 
-NestyException
+`first_child_of($ford);` Returns Int, Throws NestyException
 
 
 #####Examples:
 
 	try
 	{
-		// Get ford
-		$ford = Model_Car::find(function($query)
-		{
-			return $query->where('name', '=', 'Ford');
-		});
+		// Get Parent
+		$ford = Model_Car::where('name', '=', 'Ford')->get();
 
 		$falcon = new Model_Car(array(
 			'name' => 'Falcon',
