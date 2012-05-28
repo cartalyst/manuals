@@ -5,6 +5,6 @@ Nesty is a nested sets package for Laravel that enhances The [Cartalyst Crud Mod
 
 This will keep your app fast and you users happy.
 
-* [Features](#Features "/manuals/nesty/introduction/features")
-* [Download](#Download "/manuals/nesty/introduction/download")
-* [Installation](#Installation "/manuals/nesty/introduction/installation")
+* [Features](#features "/manuals/nesty/introduction/features")
+* [Download](#download "/manuals/nesty/introduction/download")
+* [Installation](#installation "/manuals/nesty/introduction/installation")
