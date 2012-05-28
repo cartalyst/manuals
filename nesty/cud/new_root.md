@@ -1,8 +1,8 @@
-###new_root()
+###root()
 
 ----------
 
-The `new_root` method returns the Nesty object.
+The `root` method returns the Nesty object.
 
 The function returns `Nesty` and throws `NestyException`.
 
@@ -19,7 +19,7 @@ The function returns `Nesty` and throws `NestyException`.
 		 * Make Ford a new root
 		 * Nesty object
 		 */
-		$ford->new_root();
+		$ford->root();
 	}
 	catch (NestyException $e)
 	{
@@ -48,3 +48,5 @@ The function returns `Nesty` and throws `NestyException`.
 #####Nested Structure:
 
 	Ford
+
+----------

@@ -56,3 +56,5 @@ And we deleted the "FPV" Nesty object. Our new structure would be:
 	|   Festiva
 
 Note how the children Nesty objects of FPV have also disappeared from the database.
+
+----------

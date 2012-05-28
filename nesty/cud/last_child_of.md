@@ -69,3 +69,5 @@ The function returns `integer` and throws `NestyException` only if the `$parent`
 	Ford
 	|   Falcon
 	|   Territory
+
+----------

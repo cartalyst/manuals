@@ -85,3 +85,5 @@ The function returns `Nesty` and throws `NestyException` only if the `$sibling` 
 	|   F150
 	|   Territory
 	|   Festiva
+
+----------

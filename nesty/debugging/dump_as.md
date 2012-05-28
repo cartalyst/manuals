@@ -1,5 +1,7 @@
 ###dump_as($format, $name = null, $type = 'nesty')
 
+----------
+
 Depending on the format provided, this method returns a variety of data types. While this method is used primarily for debugging, it can be used instead of `children` as a way of iterating through children objects, although it is not as powerful as `children`.
 
 Returns                          | Throws 
@@ -93,3 +95,5 @@ php        | String representing PHP code - could use with [`eval()`](http://php
    3. Car #3: Name: Territory
       1. Car #6: Name: TX
    4. Car #5: Name: Festiva
+
+----------

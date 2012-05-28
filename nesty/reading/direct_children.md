@@ -9,3 +9,5 @@ The `direct_children` method returns an `array` of children Nesty objects for th
 Parameters                   | Type            | Default       | Description      
 :--------------------------- | :-------------: | :------------ | :---------------  
 `$columns`                   | array           | array('*')    | Array of columns to select for children. Defaults to all columns.
+
+----------

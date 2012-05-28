@@ -1,4 +1,6 @@
-####get_children($limit = false)
+###get_children($limit = false)
+
+----------
 
 The `get_children` method returns an `array` of children Nesty objects for the Nesty object on which this method was called.
 
@@ -86,3 +88,4 @@ Parameters                   | Type            | Default       | Description
 	    ...
 	)
 
+----------

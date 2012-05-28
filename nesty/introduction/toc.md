@@ -8,3 +8,5 @@ This will keep your app fast and you users happy.
 * [Features](#features "/manuals/nesty/introduction/features")
 * [Download](#download "/manuals/nesty/introduction/download")
 * [Installation](#installation "/manuals/nesty/introduction/installation")
+
+----------

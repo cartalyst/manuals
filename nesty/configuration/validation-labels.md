@@ -8,3 +8,4 @@ Property                         | Type            | Default       | Description
 :------------------------------- | :-------------: | :------------ | :---------------  
 `protected static $_labels`      | array           |               | Validation labels. 
 
+----------

@@ -8,3 +8,4 @@ Property                         | Type            | Default       | Description
 :------------------------------- | :-------------: | :------------ | :---------------  
 `protected static $_table_name`  | string          |               | The name of your database table. 
 
+----------

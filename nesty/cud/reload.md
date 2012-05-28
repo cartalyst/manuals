@@ -1,6 +1,6 @@
 ###reload()
 
----------
+----------
 
 This method returns the Nesty object.
 
@@ -29,3 +29,5 @@ The function returns `Nesty` and throws `NestyException`.
 	/**
 	 * Etc...
 	 */
+
+----------
