@@ -18,14 +18,14 @@ This method returns an `integer`; the number of records affected.
 
 #####Database Table:
 
-  id        | name      | lft         | rgt         | tree_id
-  :-------- | :-------- | :---------: | :---------: | :------:
-  1         | Ford      | 1           | 8           | 1
-  2         | Falcon    | 2           | 3           | 1
-  4         | F150      | 4           | 5           | 1
-  5         | Festiva   | 6           | 7           | 1
-  
-  
+id        | name      | lft         | rgt         | tree_id
+:-------- | :-------- | :---------: | :---------: | :------:
+1         | Ford      | 1           | 8           | 1
+2         | Falcon    | 2           | 3           | 1
+4         | F150      | 4           | 5           | 1
+5         | Festiva   | 6           | 7           | 1
+
+
 #####Nested Structure:
 
 	Ford
