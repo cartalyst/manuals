@@ -1,5 +1,3 @@
-![Nesty](img/nesty.png "Nesty")
-
 #The Nesty Manual
 ##A Nested Sets package built for FuelPHP.
 
