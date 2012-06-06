@@ -1,5 +1,5 @@
 #The Nesty Manual
-##A Nested Sets package built for FuelPHP.
+##A Nested Sets package built for Laravel.
 
 * [Introduction](/manuals/nesty/introduction)
 * [Configuration](/manuals/nesty/configuration)
