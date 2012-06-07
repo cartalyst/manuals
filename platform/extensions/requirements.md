@@ -46,7 +46,7 @@ Here is an example extension.php file for a users extension.
 		},
 
 		'rules' => array(
-			'admin.is_another_admin',
+			'random_rule',
 			'users::admin.users@index',
 			'users::admin.users@create',
 			'users::admin.users@edit',
@@ -56,26 +56,16 @@ Here is an example extension.php file for a users extension.
 
 	);
 
-#####info
-The info array stores basic information about your extension.  This will be pulled into the database during installation.
+- `info` The info array stores basic information about your extension.  This will be pulled into the database during installation.
 
-#####dependencies
-The dependencies array contains a list of extensions that the current extension requires.
+- `dependencies` The dependencies array contains a list of extensions that the current extension requires.
 
-#####bundles
-The bundles array is what you are accustomed to seeing in the main application bundle's bundle.php file.  Instead of manually adding each extension you have into that file, we made more modular friendly to where you can add the settings here instead.
+- `bundles` The bundles array is what you are accustomed to seeing in the main application bundle's bundle.php file.  Instead of manually adding each extension you have into that file, we made more modular friendly to where you can add the settings here instead.
 
-#####listeners
-Does your extension want to listen to events other extensions may be firing? Throw them into this listeners function so Platform knows that your extension wants to do something when those events.
+- `listeners` Does your extension want to listen to events other extensions may be firing? Throw them into this listeners function so Platform knows that your extension wants to do something when those events. *Note: These listeners are contained in a function rather than an array*.
 
-* Note: These listeners are contained in a function rather than an array.
+- `global_routes` Each extension can still have its own routes.php file which can contain routing logic for that specific extension. But, what if you want to also add routes to the global routing? Thats what global routes are for.  These routes will be equivalent to the routes you put into the main application bundle's route.php file.  They are loaded after the main applications bundle route though. *Note: These routes are contained in a function rather than an array*.
 
-#####global routes
-Each extension can still have its own routes.php file which can contain routing logic for that specific extension. But, what if you want to also add routes to the global routing? Thats what global routes are for.  These routes will be equivalent to the routes you put into the main application bundle's route.php file.  They are loaded after the main applications bundle route though.
-
-* Note: These routes are contained in a function rather than an array.
-
-#####rules
-The rules array contains rules, or permissions users must have, in order to view a certain area of your extension.  How rules work you can find out in the Sentry portion of our documentation.  Simply put though, if you want to add a rule to your extension, you add it to this array.
+- `rules` The rules array contains rules, or permissions users must have, in order to view a certain area of your extension.  How rules work you can find out in the Sentry portion of our documentation.  Simply put though, if you want to add a rule to your extension, you add it to this array.
 
 ----------
