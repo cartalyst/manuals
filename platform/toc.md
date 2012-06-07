@@ -1,5 +1,5 @@
 #The Platform Manual
-##Some Awesome Description
+##A Guide to Platform on Laravel
 
-* [Introduction](/manuals/platform/introduction)
+* [Getting Started](/manuals/platform/introduction)
 * [Extensions](/manuals/platform/extensions)

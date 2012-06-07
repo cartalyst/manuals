@@ -1,10 +1,9 @@
-##Introduction
-####An Overview of Platform
+##Getting Started
+#### An overview of Platform
 
-TOC title
-
-* [Item 1](#features)
-* [Item 2](#download)
-* [Item 3](#installation)
+* [Introduction](#introduction "/manuals/platform/introduction/introduction")
+* [Download](#installation)
+* [Installation](#installation)
+* [Structure](#download)
 
 ----------
