@@ -1,4 +1,4 @@
-###dump_children_as($format, $name = null)
+###dump_children_as($format, $name)
 
 ----------
 

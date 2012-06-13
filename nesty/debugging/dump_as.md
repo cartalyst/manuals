@@ -1,4 +1,4 @@
-###dump_as($format, $name = null, $type = 'nesty')
+###dump_as($format, $name, $type = 'nesty')
 
 ----------
 
