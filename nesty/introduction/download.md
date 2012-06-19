@@ -15,6 +15,6 @@ There are 3 ways to download Nesty:
 
        $ git submodule add git@github.com:cartalyst/nesty.git bundles/nesty
 
-   >Notes: The above command assumes you have your Laravel installation under version control and that you are using the default **bundles** directory. If your bundles directory is not default, you may need to alter the command to reflect your **bundles** directory.
+   >**Notes:** The above command assumes you have your Laravel installation under version control and that you are using the default **bundles** directory. If your bundles directory is not default, you may need to alter the command to reflect your **bundles** directory.
 
 ----------
