@@ -5,6 +5,6 @@ Here, we'll explain how to write manuals for the Manuals extension. We'll discus
 
 * [Markdown](#markdown "/manuals/manuals/writing/markdown")
 * [Folder Structure](#folder_structure "/manuals/manuals/writing/folder_structure")
-* [Creete a Manual](#create_manual "/manuals/manuals/writing/create_manual")
+* [Create a Manual](#create_manual "/manuals/manuals/writing/create_manual")
 
 ----------
