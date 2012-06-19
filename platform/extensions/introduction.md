@@ -15,6 +15,6 @@ Extensions are really just Laravel bundles. We seperated extensions from the bun
 #####Example Bundles
 - Sentry ( authentication bundle )
 - OAuth
-- Email bundles
+- Swiftmailer
 
 ----------
