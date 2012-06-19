@@ -2,3 +2,4 @@
 ##Learn how to use our awesome Manuals Platform extension.
 
 * [Introduction](/manuals/manuals/introduction)
+* [Writing Manuals](/manuals/manuals/writing)
