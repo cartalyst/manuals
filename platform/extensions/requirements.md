@@ -8,7 +8,7 @@ As stated before, Extensions are just Laravel bundles at the core with a few add
 
 ####Extension.php file
 
-In addition to your base bundle folder setup, you will also need an extension.php file in your extensions root folder.  This file sets several configurable options for our extension that Platform will hook into. These options include extension info, dependencies, bundle settings, listeners, global routes, and rules.
+In addition to your base bundle folder setup, you will also need an extension.php file in your extensions root folder.  This file sets several configurable options for our extension that Platform will hook into. These options include extension info, dependencies, bundle settings, used events, event listeners, global routes and rules.
 
 Here is an example extension.php file for a users extension.
 
@@ -34,15 +34,23 @@ Here is an example extension.php file for a users extension.
 			'location' => 'path: '.__DIR__,
 		),
 
-		'listeners' => function() {
+		'events' => array(
+			'user.create',
+			'user.update',
+			'user.delete',
+			'group.create',
+			'group.update',
+			'group.delete',
+		),
 
+		'listeners' => function() {
+			Event::listen('extension1.event', function() { ... });
+			Event::listen('extension2.event', funciton() { ... });
 		},
 
 		'global_routes' => function() {
 			Route::any(ADMIN.'/login', 'users::admin.users@login');
 			Route::any(ADMIN.'/logout', 'users::admin.users@logout');
-			Route::any(ADMIN.'/reset_password', 'users::admin.users@reset_password');
-			Route::any(ADMIN.'/reset_password_confirm', 'users::admin.users@reset_password_confirm');
 		},
 
 		'rules' => array(
@@ -62,7 +70,9 @@ Here is an example extension.php file for a users extension.
 
 - `bundles` The bundles array is what you are accustomed to seeing in the main application bundle's bundle.php file.  Instead of manually adding each extension you have into that file, we made more modular friendly to where you can add the settings here instead.
 
-- `listeners` Does your extension want to listen to events other extensions may be firing? Throw them into this listeners function so Platform knows that your extension wants to do something when those events. *Note: These listeners are contained in a function rather than an array*.
+- `events` The events array contains the names of events your extension fires.  Creating this array of events for your extension allows other extensions to see what events your extension uses.  This comes in handy for extensions that may want to capture all of another extensions events, or every event in the system.  They can now build listeners dynamically rather than manually.
+
+- `listeners` Does your extension want to listen to events other extensions may be firing? Throw them into this listeners function so Platform knows that your extension wants to do something when those events. Platform scans for and registers these events for you. *Note: These listeners are contained in a function rather than an array*.
 
 - `global_routes` Each extension can still have its own routes.php file which can contain routing logic for that specific extension. But, what if you want to also add routes to the global routing? Thats what global routes are for.  These routes will be equivalent to the routes you put into the main application bundle's route.php file.  They are loaded after the main applications bundle route though. *Note: These routes are contained in a function rather than an array*.
 
