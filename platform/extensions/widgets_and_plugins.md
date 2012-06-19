@@ -19,7 +19,7 @@ To create a widget or plugin, you just need to create a standard class with the 
 	 * Extensions should always be contained in a namespace, copying the folder structure
 	 * of your extension.  So if your extensions directory name is foo, you should have a
 	 * namespace of Foo.  In terms of widgets and plugins, you add an additional Plugins
-	 * or Widgets namespace to the end.  So Foo becomes Foo\Widgets or Foo Plugins.
+	 * or Widgets namespace to the end.  So Foo becomes Foo\Widgets or Foo\Plugins.
 	 * Since our users extension is in a containing Platform folder, our namespace for
 	 * Widgets is Platform\Users\Widgets
 	 */
