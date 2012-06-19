@@ -12,6 +12,7 @@ Here is an example folder structure for an Extension. We'll use Users for our ex
 			* admin controllers
 		* api *( new )*
 			* api controllers
+	* configuration
 	* language
 	* migrations
 	* models
