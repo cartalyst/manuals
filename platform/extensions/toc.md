@@ -6,6 +6,6 @@
 * [Structure](#structure "/manuals/platform/extensions/structure")
 * [Requirements](#requirements "/manuals/platform/extensions/requirements")
 * [Migrations](#migrations "/manuals/platform/extensions/migrations")
-* [Widgets and Plugins](#widgets_plugins "/manuals/platform/extensions/widgets_plugins")
+* [Widgets and Plugins](#widgets_and_plugins "/manuals/platform/extensions/widgets_and_plugins")
 
 ----------
