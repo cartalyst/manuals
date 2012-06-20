@@ -6,8 +6,6 @@
 
 The reason we use Markdown is because it's easy to read and write. It's also styling agnostic, leaving the developer with power to style the markdown output however they feel appropriate.
 
-f
-
 People with little or no technical knowledge can write Markdown. There are also a bunch of apps for OS X and Windows to help you write Markdown files:
 
  - [Mou - The missing Markdown editor for web developers](http://mouapp.com/) [OS X]
