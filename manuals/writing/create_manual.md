@@ -86,4 +86,6 @@ Congratulations, you've now on track to making your first manual. You have:
 3. Created directories for each chapter
 4. Created a table of contents for each chapter that contains links to each article within the chapter. Additionally, you have created three articles for your first chapter.
 
+Blah!
+
 ----------
