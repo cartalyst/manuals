@@ -14,4 +14,6 @@ Because Platform Manuals supports multiple manuals, you need to create a sub-dir
 	|   |   bar
 	|   |   baz
 
+>**Notes:** There are currently two reserved names, `edit` and `oauth` as these routes are used in the manuals extension. If you create a manual with this name, it will be ignored.
+
 ----------
