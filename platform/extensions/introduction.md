@@ -16,5 +16,6 @@ Extensions are really just Laravel bundles. We seperated extensions from the bun
 - Sentry ( authentication bundle )
 - OAuth
 - Swiftmailer
+- Nesty ( nested sets )
 
 ----------
