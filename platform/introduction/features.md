@@ -1,6 +1,6 @@
 ###Features
 
-The Cartalyst Platform is an application base. Out of the box you will receive everything you would normally have to build saving you countless time and energy. Supported by Cartalyst LLC you can feel comfortable knowing it is both community driven backed by a team of full time developers and designers, fostering an atmosphere for an established and well maintained code base.
+The Platform is an application base. Out of the box you will receive everything you would normally have to build saving you countless time and energy. Supported by Cartalyst LLC you can feel comfortable knowing it is both community driven backed by a team of full time developers and designers, fostering an atmosphere for an established and well maintained code base.
 
 ----------
 
