@@ -15,4 +15,6 @@ Nesty has made the following features available to any object that inherits it:
   - XML
   - JSON
 
+And another.
+
 ----------
