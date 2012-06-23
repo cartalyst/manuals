@@ -1,7 +1,0 @@
-* [Introduction](/manuals/sentry/introduction/toc)
-* [Configuration](/manuals/sentry/configuration/toc)
-* [Authentication](/manuals/sentry/authentication/toc)
-* [Users](/manuals/sentry/users/toc)
-* [Groups](/manuals/sentry/groups/toc)
-* [Suspension](/manuals/sentry/suspension/toc)
-* [Social](/manuals/sentry/social/toc)
