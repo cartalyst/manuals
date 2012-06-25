@@ -1,5 +1,7 @@
 ###Database Instance
 
+----------
+
 Sentry allows you to set a specific database instance for Sentry to connect to.
 
 <table>
@@ -13,6 +15,6 @@ Sentry allows you to set a specific database instance for Sentry to connect to.
 		<td>db_instance</td>
 		<td>string</td>
 		<td>null</td>
-		<td>Name of database instance, or null for the default FuelPHP instance.</td>
+		<td>Name of database instance, or null for the default instance.</td>
 	</tr>
 </table>

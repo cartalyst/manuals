@@ -1,8 +1,8 @@
 ### Chapter I
 #### How to configure Sentry
 
-- [Database Instance](#database-instance "manual/configuration/database")
-- [Login Column](#login-column "manual/configuration/login")
-- [Remember Me](#remember-me "manual/configuration/remember")
-- [Session](#session "manual/configuration/session")
-- [Suspension](#suspension "manual/configuration/suspension")
+* [Database Instance](#database-instance "/manuals/sentry/configuration/database")
+* [Login Column](#login-column "/manuals/sentry/configuration/login")
+* [Remember Me](#remember-me "/manuals/sentry/configuration/remember")
+* [Session](#session "/manuals/sentry/configuration/session")
+* [Suspension / Limit Attempts](#suspension "/manuals/sentry/configuration/suspension")
