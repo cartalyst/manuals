@@ -1,7 +1,10 @@
-* [Introduction](/manuals/sentry/introduction/toc)
-* [Configuration](/manuals/sentry/configuration/toc)
-* [Authentication](/manuals/sentry/authentication/toc)
-* [Users](/manuals/sentry/users/toc)
-* [Groups](/manuals/sentry/groups/toc)
-* [Suspension](/manuals/sentry/suspension/toc)
-* [Social](/manuals/sentry/social/toc)
+#The Sentry Manual
+##Authorization &amp; Authentication system built for Laravel
+
+* [Introduction](/manuals/sentry/introduction)
+* [Configuration](/manuals/sentry/configuration)
+* [Authentication](/manuals/sentry/authentication)
+* [Users](/manuals/sentry/users)
+* [Groups](/manuals/sentry/groups)
+* [Suspension](/manuals/sentry/suspension)
+* [Social](/manuals/sentry/social)
