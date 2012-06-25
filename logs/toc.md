@@ -1,4 +1,4 @@
-# Logs Extension Manual
+#Logs Extension Manual
 ##A Guide to Logs
 
 * [Introduction](/manuals/logs/introduction)
