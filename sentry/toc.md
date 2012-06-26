@@ -7,4 +7,3 @@
 * [Users](/manuals/sentry/users)
 * [Groups](/manuals/sentry/groups)
 * [Suspension](/manuals/sentry/suspension)
-* [Social](/manuals/sentry/social)
