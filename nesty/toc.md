@@ -3,6 +3,7 @@
 
 * [Introduction](/manuals/nesty/introduction)
 * [Configuration](/manuals/nesty/configuration)
-* [Create / Update / Delete](/manuals/nesty/cud)
+* [Creating / Updating / Deleting Objects](/manuals/nesty/cud)
+* [Managing Entire Trees](/manuals/nesty/managing_trees)
 * [Reading](/manuals/nesty/reading)
 * [Debugging](/manuals/nesty/debugging)
