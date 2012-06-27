@@ -13,7 +13,14 @@ Parameters                   | Type            | Default       | Description
 
 `returns` bool, array `throws` SentryException
 
-> **Notes:** If the user logs in to their account before confirming the reset, the reset process will be nullified.
+> **Note:** If the user logs in to their account before confirming the reset, the reset process will be nullified.
+
+> **Note:** Until [this](https://github.com/laravel/laravel/pull/873) pull request is accepted, you will need to modify your laravel/routing/router.php file with the following code. This is to fix an issue with base64_encoding creating '=' signs and the uri not allowing it with your reset link.
+
+	line 78 - '(:any)' => '([a-zA-Z0-9\.\-_%=]+)', // adds an '=' sign
+
+	line 89 - '/(:any?)' => '(?:/([a-zA-Z0-9\.\-_%=]+)', // adds an '=' sign
+
 
 ####Example
 
