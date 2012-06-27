@@ -114,5 +114,75 @@ To nest children, you use a key / value declaration within an item, where `child
   7         | Celica    | 11          | 12          | 1
   8         | Hilux     | 13          | 14          | 1
 
+>**Notes:** `from_hierarchy_array()` maps the provided array with the database. This means if you don't provide an entry in the mapped array that exists in the database, it will be deleted from the database. Be wary of this.
+
+####Example
+
+	// Let's add to the previous setup
+	$items = array(
+		array(
+			'id'   => 2,
+			'name' => 'Holden',
+		),
+		array(
+			'id'   => 3,
+			'name' => 'Ford',
+		),
+
+		array(
+			'name' => 'Toyota',
+
+			// Nest children within this reserved
+			// key name
+			'children' => array(
+
+				array(
+					'name' => 'Prius',
+				),
+				array(
+					'name' => 'Camry',
+				),
+				array(
+					'name' => 'Celica',
+				),
+				array(
+					'name' => 'Hilux',
+				),
+
+			),
+		),
+	);
+
+	// Let's manipulate the items before they're inserted in
+	// the databse. The power of this is endless
+	$tree = Nesty::from_hierarchy_array(1, $items, function($root_item)
+	{
+		// Prepend text
+		$root_item->name = 'Foo '.$root_item->name;
+		return $root_item;
+
+	}), function($item)
+	{
+		// No Prius in table
+		if ($item->name == 'Prius')
+		{
+			return false;
+		}
+
+		$item->name = 'Bar '.$item->name;
+		return $item;
+	});
+
+#####Database Table:
+
+  id        | name        | lft         | rgt         | tree_id
+  :-------- | :--------   | :---------: | :---------: | :------:
+  1         | Foo Cars    | 1           | 14          | 1
+  2         | Bar Holden  | 2           | 3           | 1
+  3         | Bar Ford    | 4           | 5           | 1
+  4         | Bar Toyota  | 6           | 13          | 1
+  6         | Bar Camry   | 7           | 8           | 1
+  7         | Bar Celica  | 9           | 10          | 1
+  8         | Bar Hilux   | 11          | 12          | 1
 
 ----------
