@@ -33,36 +33,11 @@ The function returns `integer` and throws `NestyException` only if the `$parent`
 
 #####Database Table:
 
-<table>
-	<tr>
-		<th>`id`</th>
-		<th>`name`</th>
-		<th>`lft`</th>
-		<th>`rgt`</th>
-		<th>`tree_id`</th>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>Ford</td>
-		<td>1</td>
-		<td>6</td>
-		<td>1</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>Falcon</td>
-		<td>2</td>
-		<td>3</td>
-		<td>1</td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td>Territory</td>
-		<td>4</td>
-		<td>5</td>
-		<td>1</td>
-	</tr>
-</table>
+  id        | name      | lft         | rgt         | tree_id
+  :-------- | :-------- | :---------: | :---------: | :------:
+  1         | Ford      | 1           | 8           | 1
+  2         | Falcon    | 2           | 3           | 1
+  3         | Territory | 4           | 5           | 1
 
 #####Nested Structure:
 

@@ -11,12 +11,12 @@ The function returns `integer` and throws `NestyException` only if the `$parent`
 	try
 	{
 		// Get ford
-        $ford = Model_Car::find(function($query)
-        {
-            return $query->where('name', '=', 'Ford');
-        });
+		$ford = Model_Car::find(function($query)
+		{
+			return $query->where('name', '=', 'Ford');
+		});
 
-        $falcon = new Model_Car(array(
+		$falcon = new Model_Car(array(
 			'name' => 'Falcon',
 		));
 
