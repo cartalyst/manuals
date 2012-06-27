@@ -11,20 +11,20 @@ The function returns `integer` and throws `NestyException` only if the `$parent`
 	try
 	{
 		// Get ford
-        $ford = Model_Car::find(function($query)
-        {
-            return $query->where('name', '=', 'Ford');
-        });
+		$ford = Model_Car::find(function($query)
+		{
+			return $query->where('name', '=', 'Ford');
+		});
 
-        $falcon = new Model_Car(array(
+		$falcon = new Model_Car(array(
 			'name' => 'Falcon',
 		));
 
 		/**
-		 * Make first child
+		 * Make falcon first child
 		 * of Ford
 		 */
-		$ford->first_child_of($ford);
+		$falcon->first_child_of($ford);
 	}
 	catch (NestyException $e)
 	{
@@ -35,7 +35,7 @@ The function returns `integer` and throws `NestyException` only if the `$parent`
 
   id        | name      | lft         | rgt         | tree_id
   :-------- | :-------- | :---------: | :---------: | :------:
-  1         | Ford      | 1           | 8           | 1
+  1         | Ford      | 1           | 4           | 1
   2         | Falcon    | 2           | 3           | 1
 
 
