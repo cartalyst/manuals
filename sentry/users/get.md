@@ -7,7 +7,7 @@ The get method returns requested fields.
 
 Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
-`$field`                     | istring, array  |               | A field or array of fields to return from the 'users' table. To retrieve metadata use 'metadata'.
+`$field`                     | string, array  |               | A field or array of fields to return from the 'users' table. To retrieve metadata use 'metadata'.
 
 `returns` bool `throws` SentryException
 
