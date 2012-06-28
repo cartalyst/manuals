@@ -6,3 +6,4 @@
 * [Remember Me](#remember-me "/manuals/sentry/configuration/remember")
 * [Session](#session "/manuals/sentry/configuration/session")
 * [Suspension / Limit Attempts](#suspension "/manuals/sentry/configuration/suspension")
+* [Password Hashing](#password-hashing "/manuals/sentry/configuration/hashing")
