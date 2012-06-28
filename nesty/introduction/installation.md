@@ -6,12 +6,12 @@ Once downloaded, you will need to register the bundle with Laravel. Open your **
 
 **Registering Nesty:**
 
-    return array(
-    
-    	// array('auto' => true) will
-    	// automatically start the bundle.
-    	'nesty' => array('auto' => true),
-    );
+	return array(
+	
+		// array('auto' => true) will
+		// automatically start the bundle.
+		'nesty' => array('auto' => true),
+	);
 
 >**Notes:** If you don't want to automatically start the Nesty bundle, visit [here](http://laravel.com/docs/bundles#starting-bundles) to learn how to manually start bundles.
 
