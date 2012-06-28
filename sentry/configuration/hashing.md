@@ -2,7 +2,7 @@
 
 ----------
 
-Sentry has its own Password Hashing Driver.  This allows you to easily create a new driver for your authorization system to use or hook into.
+Sentry has its own Password Hashing Driver.  This allows you to easily create a new driver for your auth system to use or hook into.
 
 The driver can be found in `sentry/sentry/hash/driver.php`. New drivers or `strategies` can be found in the `hash/strategy` directory.  A sample driver is provided below.
 
