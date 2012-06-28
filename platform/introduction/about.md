@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-###Platform
-
-Platform is an application base, think of it as a bootstrap for Laravel. It includes all the fundamentals and essentials that are normally required of a web based application. It is well documented, and feature rich.
-
-Checkout this video for an overview of Platform - Beta.
-
-----------
-
-=======
 ###Platform
 
 The Platform is an application base, think of it as a bootstrap for Laravel. It includes all the fundamentals and essentials that are normally required of a web based application. It is well documented, and feature rich.
@@ -31,4 +21,3 @@ Having the power of Laravel at your disposal is great, having a base application
 Gain the power to create and manage themes alongside Laravel’ amazing blade template engine. Not only can you have multiple themes you can create theme options editable with the included theme manager.
 
 ----------
->>>>>>> 4ed79804b734a0944b023d0b1ccc6dda2b9ab422
