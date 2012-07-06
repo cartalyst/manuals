@@ -31,7 +31,7 @@ Parameters                   | Type            | Default       | Description
 	    }
 
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    // issue logging in via Sentry - lets catch the sentry error thrown
 	    // store/set and display caught exceptions such as a suspended user with limit attempts feature.
