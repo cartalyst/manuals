@@ -20,7 +20,7 @@ Remember me sets a cookie to keep the user logged in for a designated length of 
 	<tr>
 		<td>expiration</td>
 		<td>int</td>
-		<td>1209600 // 2 weeks</td>
-		<td>The amount of time the cookie should be set for in seconds.</td>
+		<td>20160 // 2 weeks - minutes</td>
+		<td>The amount of time the cookie should be set for in minutes.</td>
 	</tr>
 </table>
