@@ -10,7 +10,7 @@ Parameters                   | Type            | Default       | Description
 `$login_id`                  | string          | null          | The users login.
 `$ip_address`                | string          | null          | The users ip address.
 
-`returns` Sentry_Attempts `throws` SentryException
+`returns` Sentry_Attempts `throws` Sentry\SentryException
 
 > **Note:** The exceptions with this method are only thrown if there are bad config settings. You should only have to worry about them during the inital setup of Sentry.
 

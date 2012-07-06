@@ -10,7 +10,7 @@ Parameters                   | Type            | Default       | Description
 `$fields`                    | array           |               | An array consisting of fields to update. Metadata fields will need to be an array within a metadata key.
 `$hash_password`             | bool            | true          | If set to true, all password fields will be hashed.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 > **Note:** The register method checks to make sure the login and emails are unique. Register is typically used for the user registration process unless you do not want activation.
 
@@ -37,7 +37,7 @@ Parameters                   | Type            | Default       | Description
 	        // something went wrong
 	    }
 	}
-	catch (SentryUserException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user not existing or bad fields
 	}

@@ -10,7 +10,7 @@ Parameters                   | Type            | Default       | Description
 `$password`                  | string          |               | The users new password
 `$old_password`              | string          |               | The users old password
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -28,7 +28,7 @@ Parameters                   | Type            | Default       | Description
 	        // something went wrong
 	    }
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as incorrect old password
 	}

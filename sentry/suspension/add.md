@@ -5,7 +5,7 @@
 
 The add method adds an attempt to a certain login/ip combo.
 
-`throws` SentryException
+`throws` Sentry\SentryException
 
 ####Example
 
@@ -16,7 +16,7 @@ The add method adds an attempt to a certain login/ip combo.
 
 	    Sentry::attempts()->add(); // this or any other combo will throw an exception - login/ip required
 	}
-	catch (SentryAttemptsException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $error = $e->getMessage();
 	}

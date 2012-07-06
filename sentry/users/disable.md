@@ -5,7 +5,7 @@
 
 Disables a user.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -21,7 +21,7 @@ Disables a user.
 	        // something went wrong
 	    }
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage();
 	}

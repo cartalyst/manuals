@@ -25,7 +25,7 @@ Parameters                   | Type            | Default       | Description
 		    // user is not in the group
 		}
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user does not exist.
 	}

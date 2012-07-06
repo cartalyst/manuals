@@ -14,7 +14,7 @@ Retrieves the groups permissions
 		// get groups permissions
 		$permissions = Sentry::user('admin')->permissions();
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user does not exist.
 	}

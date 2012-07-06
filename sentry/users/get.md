@@ -9,7 +9,7 @@ Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
 `$field`                     | string, array  |               | A field or array of fields to return from the 'users' table. To retrieve metadata use 'metadata'.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -28,7 +28,7 @@ Parameters                   | Type            | Default       | Description
 	    // option 3
 	    $first_name = $user->get('metadata.first_name');
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user not existing or bad fields
 	}

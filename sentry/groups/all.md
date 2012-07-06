@@ -5,7 +5,7 @@
 
 The all method returns all groups
 
-`returns` array `throws` SentryException
+`returns` array `throws` Sentry\SentryException
 
 ####Example
 
@@ -14,7 +14,7 @@ The all method returns all groups
 	{
 	    $groups = Sentry::group()->all();
 	}
-	catch (SentryGroupException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage();
 	}

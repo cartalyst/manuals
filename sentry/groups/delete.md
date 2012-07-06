@@ -5,7 +5,7 @@
 
 The delete method deletes the current group and all associations to it.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -20,7 +20,7 @@ The delete method deletes the current group and all associations to it.
 	        // group was not deleted
 	    }
 	}
-	catch (SentryGroupException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage();
 	}

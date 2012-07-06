@@ -10,7 +10,7 @@ Parameters                   | Type            | Default       | Description
 `$id`                     	 | int, string     | null          | The users id (int) or login column value (string).<br>If null, the current logged in user is selected.<br>If there is no user logged in, a blank user object is returned.
 `$recache`                   | bool            | false         | Recache the selected user object.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -25,7 +25,7 @@ Parameters                   | Type            | Default       | Description
 	    // get the current logged in user or an empty user
 	    $user = Sentry::user();
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $error = $e->getMessage();
 	}

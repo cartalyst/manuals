@@ -11,7 +11,7 @@ Parameters                   | Type            | Default       | Description
 `$code`                      | string          |               | The users activation hash.
 `$decode`                    | bool            | true          | If the login value needs to be decoded.
 
-`returns` bool, array (user) `throws` SentryException
+`returns` bool, array (user) `throws` Sentry\SentryException
 
 ####Example
 
@@ -33,7 +33,7 @@ Parameters                   | Type            | Default       | Description
 	    }
 
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    // issue activating the user
 	    // store/set and display caught exceptions such as a suspended user with limit attempts feature.

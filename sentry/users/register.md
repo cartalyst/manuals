@@ -9,7 +9,7 @@ Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
 `$user`                      | array           |               | An array consisting of the 'username', 'email', and 'password' and their values. If 'email' is the login column, 'username' is not required.
 
-`returns` array - array of user_id and activation hash. `throws` SentryException
+`returns` array - array of user_id and activation hash. `throws` Sentry\SentryException
 
 > **Note:** The register method checks to make sure the login and emails are unique. Register is typically used for the user registration process unless you do not want activation.
 
@@ -40,7 +40,7 @@ Parameters                   | Type            | Default       | Description
 	        // something went wrong - shouldn't really happen
 	    }
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	     $errors = $e->getMessage(); // catch errors such as user exists or bad fields
 	}

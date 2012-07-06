@@ -10,7 +10,7 @@ Parameters                   | Type            | Default       | Description
 `$id`                        | int, string     |               | The user id or loing ( email or username ).
 `$provider`                  | string          | Sentry-Forced | What system was used to force the login
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -20,7 +20,7 @@ Parameters                   | Type            | Default       | Description
 	    // force login
 	    Sentry::force_login('john.doe@domain.com');
 	}
-	catch (SentryAuthException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    // could not for the login - user not found
 	    $error = $e->getMessage();

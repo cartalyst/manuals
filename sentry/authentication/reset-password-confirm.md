@@ -11,7 +11,7 @@ Parameters                   | Type            | Default       | Description
 `$code`                      | string          |               | The password reset hash.
 `$decode`                    | bool            | true          | If the login value needs to be decoded.
 
-`returns` bool, array `throws` SentryException
+`returns` bool, array `throws` Sentry\SentryException
 
 > **Note:** If the user logs in to their account before confirming the reset, the reset process will be nullified.
 
@@ -40,7 +40,7 @@ Parameters                   | Type            | Default       | Description
 	    }
 
 	}
-	catch (SentryAuthException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    // issue activating the user
 	    // store/set and display caught exceptions such as a user not existing or user is disabled

@@ -26,7 +26,7 @@ Parameters                   | Type                | Default       | Description
 	    	// user does not have admin access
 	    }
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors
 	}

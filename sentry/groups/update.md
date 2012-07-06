@@ -9,7 +9,7 @@ Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
 `$fields`                    | array           |               | Array of fields to update for the group.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -31,7 +31,7 @@ Parameters                   | Type            | Default       | Description
 	        // group was not updated
 	    }
 	}
-	catch (SentryGroupException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage();
 	}

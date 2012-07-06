@@ -14,7 +14,7 @@ Retrieves the users permissions
 		// get current users permissions
 		$permissions = Sentry::user()->permissions();
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user does not exist.
 	}

@@ -9,7 +9,7 @@ Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
 `$id`                        | int, string     |               | The groups id or name
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -24,7 +24,7 @@ Parameters                   | Type            | Default       | Description
 	    // option 2
 	    $user->add_to_group('editor');
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user already in group
 	}

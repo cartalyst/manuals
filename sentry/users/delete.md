@@ -5,7 +5,7 @@
 
 The delete method deletes a user.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 
@@ -24,7 +24,7 @@ The delete method deletes a user.
 	        // something went wrong
 	    }
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user not existing
 	}

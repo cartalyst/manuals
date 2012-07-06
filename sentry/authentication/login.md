@@ -11,7 +11,7 @@ Parameters                   | Type            | Default       | Description
 `$password`                  | string          |               | The users password.
 `$remember`                  | bool            | false         | Whether the remember me cookie should be created or not.
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 ####Example
 

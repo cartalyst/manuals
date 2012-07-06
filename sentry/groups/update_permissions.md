@@ -9,7 +9,7 @@ Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
 `$rules`                     | array           |               | array of rules and there value ( 0 or 1 )
 
-`returns` bool `throws` SentryException
+`returns` bool `throws` Sentry\SentryException
 
 > **Note:** Permissions can also be updated through the `update()` method with a key of `permissions`
 
@@ -33,7 +33,7 @@ Parameters                   | Type            | Default       | Description
 		    // permissions were not updated
 		}
 	}
-	catch (SentryException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors
 	}

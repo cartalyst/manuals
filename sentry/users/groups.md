@@ -15,7 +15,7 @@ Returns an array of groups the user is part of.
 	    $user = Sentry::user(25);
 	    $user_groups = $user->groups();
 	}
-	catch (SentryUserException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage(); // catch errors such as user doesn't exist
 	}

@@ -9,7 +9,7 @@ Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
 `$group`                     | array           |               | An array of consisting of the groups 'name' and 'level'. Optional fields are 'is_admin' and 'parent'. The group name must be unique.
 
-`returns` bool, int - false or group id `throws` SentryException
+`returns` bool, int - false or group id `throws` Sentry\SentryException
 
 ####Example
 
@@ -21,7 +21,7 @@ Parameters                   | Type            | Default       | Description
 	        'level' => 100,
 	    ));
 	}
-	catch (SentryGroupException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage();
 	}

@@ -10,7 +10,7 @@ Parameters                   | Type            | Default       | Description
 `$login_column_value`        | string          |               | The users login ( email or username ).
 `$password`                  | string          | true          | A new password that the user wants to use.
 
-`returns` bool, array `throws` SentryException
+`returns` bool, array `throws` Sentry\SentryException
 
 > **Notes:** The new password will not come into effect until confirmed. Also, if a user logs into the account before the password is confirmed, the entire reset password process will be nullified
 
@@ -34,7 +34,7 @@ Parameters                   | Type            | Default       | Description
 	    }
 
 	}
-	catch (SentryAuthException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    // issue activating the user
 	    // store/set and display caught exceptions such as a user not existing or user is disabled

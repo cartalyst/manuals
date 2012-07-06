@@ -9,7 +9,7 @@ Parameters                   | Type            | Default       | Description
 :--------------------------- | :-------------: | :------------ | :--------------
 `$field`                     | string, array   | null          | The name or names of fields to retrieve.
 
-`returns` string, array `throws` SentryException
+`returns` string, array `throws` Sentry\SentryException
 
 ####Example
 
@@ -22,7 +22,7 @@ Parameters                   | Type            | Default       | Description
 	    //or
 	    $group_info = Sentry::group(2)->get();
 	}
-	catch (SentryGroupException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage();
 	}

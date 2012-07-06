@@ -5,7 +5,7 @@
 
 The suspend method suspends a login/ip combo for a set amount of time.
 
-`throws` SentryException
+`throws` Sentry\SentryException
 
 ####Example
 
@@ -16,7 +16,7 @@ The suspend method suspends a login/ip combo for a set amount of time.
 
 	    Sentry::attempts()->suspend(); // this or any other combo will throw an exception - login/ip required
 	}
-	catch (SentryAttemptsException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $error = $e->getMessage();
 	}

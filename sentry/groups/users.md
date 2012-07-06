@@ -5,7 +5,7 @@
 
 The users method returns all the users in the group.
 
-`returns` array `throws` SentryException
+`returns` array `throws` Sentry\SentryException
 
 ####Example
 
@@ -14,7 +14,7 @@ The users method returns all the users in the group.
 	{
 	    $users = Sentry::group(2)->users();
 	}
-	catch (SentryGroupException $e)
+	catch (Sentry\SentryException $e)
 	{
 	    $errors = $e->getMessage();
 	}
