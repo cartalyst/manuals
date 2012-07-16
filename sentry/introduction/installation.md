@@ -1,12 +1,15 @@
-<a id="installation"></a>
-##Installation
+###Installation
 
-Once downloaded, you may want to add sentry to the always load packages array in 'app/config.php'. Installing the tables is as simple as running an oil migration.
+----------
 
->**Notes:** Your database connection needs to be setup first. The DB_Util code can be found in sentry/migrations if you can not install via oil for some reason. If you wish to change the default table names, you may adjust them in the configuration file.
+Once downloaded, you will probably want to autoload the bundle by adding the following code to your application bundles.php file.
 
-    $ php oil r migrate --packages=sentry
 
-##Special thanks to
+	'sentry' => array(
+		'auto'     => true,
+	),
 
-_Contributin Authors John Doe, Henry Nutsack_
+Installing the tables for sentry is as simple as running its migration.
+<br>
+<br>
+>**Note:** If you wish to change the default table names, you may adjust them in the configuration file.
