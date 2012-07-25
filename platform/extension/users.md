@@ -35,3 +35,10 @@ The users extension is used to find and edit information about your applications
 #### API Functionality
 
 ##### Users
+
+*Get Users*
+Returns users and related data
+
+Type       | GET
+Call       | API::get('users')
+Parameters | select, where, order_by, take, skip
