@@ -244,7 +244,7 @@ Create a user
 
 *Example*
 	
-	$response = API::post('users/register', array(
+	$response = API::post('users/create', array(
 		'email'            => 'john.doe@getplatform.com',
 		'password'         => 'somepassword',
 		'password_confirm' => 'somepassword',
@@ -368,7 +368,7 @@ Retrieve Users Datatable data
 	</tr>
 	<tr>
 		<th>Call</th>
-		<td>users/delete</td>
+		<td>users/datatable</td>
 	</tr>
 	<tr>
 		<th>Paramaters</th>
@@ -398,3 +398,175 @@ Retrieve Users Datatable data
 	}
 
 	return Theme::make('users::user.index', $data);
+
+	##### Users
+
+**Get Groups**
+Returns groups and related data
+
+<table>
+	<tr>
+		<th>Type</th>
+		<td>GET</td>
+	</tr>
+	<tr>
+		<th>Call</th>
+		<td>users/groups</td>
+	</tr>
+	<tr>
+		<th>Paramaters</th>
+		<td>select, where, order_by, take, skip</td>
+	</tr>
+</table>
+
+*Example*
+	
+	$response = API::get('users/groups', array(
+		'where' => array(
+			array('id', '>', '5')
+		),
+		'take' => 5,
+		'skip' => 0
+	));
+
+	if ( ! $response['status'])
+	{
+		// issue with api request
+	}
+
+	$users = $response['users'];
+
+
+**Create**
+Create a group
+
+<table>
+	<tr>
+		<th>Type</th>
+		<td>POST</td>
+	</tr>
+	<tr>
+		<th>Call</th>
+		<td>users/groups/create</td>
+	</tr>
+	<tr>
+		<th>Paramaters</th>
+		<td>user array.</td>
+	</tr>
+</table>
+
+*Example*
+	
+	$response = API::post('users/groups/create', array(
+		'name' => 'editor',
+	));
+
+	if ( ! $response['status'])
+	{
+		// create failed
+	}
+
+
+
+**Update**
+Update a group
+
+<table>
+	<tr>
+		<th>Type</th>
+		<td>POST</td>
+	</tr>
+	<tr>
+		<th>Call</th>
+		<td>users/groups/update</td>
+	</tr>
+	<tr>
+		<th>Paramaters</th>
+		<td>user array. `id` required</td>
+	</tr>
+</table>
+
+*Example*
+	
+	$response = API::post('users/groups/update', array(
+		'id'          => 1
+		'name'        => 'editor',
+		'permissions' => array(),
+	));
+
+	if ( ! $response['status'])
+	{
+		// create failed
+	}
+
+
+**Delete**
+Delete a group
+
+<table>
+	<tr>
+		<th>Type</th>
+		<td>POST</td>
+	</tr>
+	<tr>
+		<th>Call</th>
+		<td>users/groups/delete</td>
+	</tr>
+	<tr>
+		<th>Paramaters</th>
+		<td>user array. `id` required</td>
+	</tr>
+</table>
+
+*Example*
+	
+	$response = API::post('users/groups/delete', array(
+		'id' => 1,
+	));
+
+	if ( ! $response['status'])
+	{
+		// delete failed
+	}
+
+
+**Datatable**
+Retrieve Groups Datatable data
+
+<table>
+	<tr>
+		<th>Type</th>
+		<td>GET</td>
+	</tr>
+	<tr>
+		<th>Call</th>
+		<td>users/groups/datatable</td>
+	</tr>
+	<tr>
+		<th>Paramaters</th>
+		<td>select, alias, where, order_by</td>
+	</tr>
+</table>
+
+*Example*
+	
+	// Grab our datatable
+	$response = API::get('users/groups/datatable', Input::get());
+
+	$data = array(
+		'columns' => $response['columns'],
+		'rows'    => $response['rows'],
+	);
+
+	// If this was an ajax request, only return the body of the datatable
+	if (Request::ajax())
+	{
+		return json_encode(array(
+			"content"        => Theme::make('users::user.partials.table_users', $data)->render(),
+			"count"          => $response['count'],
+			"count_filtered" => $response['count_filtered'],
+			"paging"         => $response['paging'],
+		));
+	}
+
+	return Theme::make('users::groups.index', $data);
