@@ -1,71 +1,25 @@
-###Declaring
+###Controller
 
 ----------
 
->**Notes:** As outlined before, this tutorial assumes you are familiar with the different components of an extension. If you're new to Platform, see our [Extension Guide](/manuals/platform/extensions) first.
+For our API to work, we need to create an API controller.
 
-####Creating a folder for our extension
+Our API is going to respond to the following resource paths:
 
-In Platform, an extension's files live in 3 places:
+	GET  /api/books/datatable
+	GET  /api/books
+	POST /api/books
 
-1. PHP files live under `platform/extensions`
-2. Backend templates live under `public/platform/themes/backend/default/extensions`
-3. Frontend templates live under `public/platform/themes/frontend/default/extensions`
+####GET /api/books/datatable
 
-Locate the `platform/extensions` folder within your Platform installation. Create a folder called `books` (this is case sensitive). This is where our extension PHP files are going to live.
+This method returns an array of information used for creating a "Platform Table" - an AJAX driven table used for displaying records in the administration interface.
 
->**Notes:** You can create a sub-folder structure in order to group extensions if you wish. For example, if your company is called `Webcomm`, you might have a the following folder structure for your `books` extension - `platform/extensions/webcomm/books`. Currently, you can only nest extensions in folders **one level deep**.
+####GET /api/books
 
-####Creating our extension.php file
+If the ID of a book is passed through as a parameter, we return that book. If the ID isn't passed through, we return all books.
 
-Navigate to your extension's folder. Create a new file in it called `extension.php`. Insert the code below into your file using your [favorite text editor](http://www.sublimetext.com):
+####POST /api/books
 
-	<?php
-	return array(
-	    'info' => array(
-	    
-	    	// Give your extension a name - This
-	    	// is what is shown to your users in
-	    	// the Extensions Manager
-	        'name'        => 'Books',
-	        
-	        // Slug - MUST match the folder name
-	        // you put the extension in.
-	        'slug'        => 'books',
-
-			// Author - you're creating this extension,
-			// so take some credit for it
-	        'author'      => 'Cartalyst LLC',
-
-			// Write a one or two sentence description
-			// about your extension
-	        'description' => 'A books management extension',
-
-			// Version of the extension
-	        'version'     => '1.0',
-	    ),
-
-		// Because extensions are Laravel Bundles with a
-		// bit of sugar and spice, we need to register
-		// the Laravel Bundle.
-	    'bundles' => array(
-	        'handles' => 'books',
-	        'location' => 'path: '.__DIR__,
-	    ),
-
-		// We could register event listeners to be executed
-		// whenever our extension is installed and enable
-	    'listeners' => function() {
-
-			// Feel free to delete all this
-			Event::listen('laravel.query', function($sql, $bindings, $time)
-			{
-				Log::query($sql.' '.json_encode($bindings));
-			});
-
-	    },
-	);
-
-It is ideal to have a read through the comments in the code to grasp an understanding of each component's role within an extension.
+This method is used to create or update a book. Information is passed through about the book and we create or update a model instance accordingly and return the created model instance.
 
 ----------

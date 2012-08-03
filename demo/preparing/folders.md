@@ -9,6 +9,8 @@ Our extension is going to require the following folder structure:
 	books
 	|  config
 	|  controllers
+	|  |  admin
+	|  |  api
 	|  language
 	|  migrations
 	|  models

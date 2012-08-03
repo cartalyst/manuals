@@ -13,4 +13,43 @@ In Platform, our extensions are de-coupled because:
 - As long as the API resource (URI route) is respected and supported, extensions can be upgraded easier without causing issues with other extensions (such as incompatible method calls, class name changes etc).
 - Classes can still be overridden through Laravel's powerful [Event Listeners](http://laravel.com/docs/events) which can be setup within your extnesion's classes or on an [extension's declaration](/manuals/demo/preparing/declaring) (`extension.php`) level. The choice is yours.
 
+####API Overview
+
+The API in Platform is very easy to use. It any number of [HTTP verbs](http://stackoverflow.com/questions/2001773/understanding-rest-verbs-error-codes-and-authentication#answer-2022938), and has helper methods for 4 of them:
+
+1. GET
+2. POST
+3. PUT
+4. DELETE
+
+Usage is very simple. The first parameter is the URI string and the second parameter is an array of parameters to go to that resource path (such as a query string or POST data, both accessible via Input::get() on the API controller's end).
+
+Below are some examples to put this into context for you:
+
+	// Get data from a resource path
+	API::get('some/resource/path');
+	
+	// Get data from a resource path with Input::get() parameters available
+	API::get('some/resource/path', array(
+		'foo' => 'bar',
+		'baz' => 'bat',
+	)):
+	
+	// Post data to a resource path
+	API::post('another/resource/path', array(
+		'id'   => 5,
+		'name' => 'Ben Corlett',
+		'age'  => 20,
+	));
+
+>**Notes:** The URI string is prepended with `api/` to determine the actual URI string. `some/resource/path` will actually route to `api/some/resource/path`. Absence of `api/` is purely for convenience.
+
+You can use any number of [HTTP verbs](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) you want, just use the `API::call()` method:
+
+	// The second parameter is the 
+	API::call('some/resource/path', 'HEAD', array(
+		'foo' => 'bar',
+		'baz' => 'bat',
+	));
+
 ----------
