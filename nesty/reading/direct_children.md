@@ -1,4 +1,4 @@
-###get_direct_children()
+###direct_children()
 
 ----------
 
