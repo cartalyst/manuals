@@ -75,21 +75,6 @@ Create a file under `books/language/en/books.php`. Place the following inside it
 			'cover'   => 'Cover',
 		),
 
-		/* Reset Password */
-		'reset' => array(
-			'password_confirm_success' => 'Your password reset has confirmed and updated successfully. You may now log in with your new password.',
-			'password_confirm_error'   => 'There was an error confirming your password reset. Please try again.',
-			'password_error'           => 'Unable to reset your password, please make sure both Email and Password are set and you are using a registered email address.',
-			'password_success'         => 'Your password has been reset, please check your email to confirm.',
-		),
-
-		/* Logs */
-		'log' => array(
-			'create' => 'Created Book: :book - Id: :id.',
-			'edit'   => 'Edited Book: :book - Id: :id.',
-			'delete' => 'Deleted Book: :book - Id: :id.',
-		),
-
 		/* General Errors */
 		'errors' => array(
 			'not_found'       => 'Book Id: :id doesn\'t exist.',
