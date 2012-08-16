@@ -16,7 +16,7 @@ Our extension is going to require the following folder structure:
 	|  models
 
 
-#####Under `public/platform/themes/backend/extensions`:
+#####Under `public/platform/themes/backend/default/extensions`:
 
 	books
 	|  assets
@@ -24,7 +24,7 @@ Our extension is going to require the following folder structure:
 	|  |  img
 	|  |  js
 
-#####Under `public/platform/themes/frontend/extensions`:
+#####Under `public/platform/themes/frontend/default/extensions`:
 
 	books
 	|  assets

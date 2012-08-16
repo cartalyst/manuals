@@ -5,3 +5,4 @@
 * [Preparing Our Extension](/manuals/demo/preparing)
 * [Preparing Our Data](/manuals/demo/data)
 * [Building the API](/manuals/demo/api)
+* [Books Administration](/manuals/demo/admin)
