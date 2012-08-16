@@ -8,9 +8,9 @@ Step 1 is setting up your system for the installation process.  This just includ
 
 Files and Directories to be modified for platform Installation:
 
-`platform/application/config/application.php`
+`platform/application/config/`
 
-`platform/application/config/database.php`
+`platform/application/config/application.php`
 
 `public/platform/themes/compiled/`
 
