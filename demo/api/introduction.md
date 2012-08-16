@@ -17,37 +17,45 @@ In Platform, our extensions are de-coupled because:
 
 The API in Platform is very easy to use. It any number of [HTTP verbs](http://stackoverflow.com/questions/2001773/understanding-rest-verbs-error-codes-and-authentication#answer-2022938), and has helper methods for 4 of them:
 
-1. GET
-2. POST
-3. PUT
-4. DELETE
+
+1. HEAD
+2. GET
+3. POST
+4. PUT
+5. DELETE
 
 Usage is very simple. The first parameter is the URI string and the second parameter is an array of parameters to go to that resource path (such as a query string or POST data, both accessible via Input::get() on the API controller's end).
 
 Below are some examples to put this into context for you:
 
-	// Get data from a resource path
-	API::get('some/resource/path');
+	// Get information from the 'people' resource.
+	API::get('people');
 	
-	// Get data from a resource path with Input::get() parameters available
-	API::get('some/resource/path', array(
-		'foo' => 'bar',
-		'baz' => 'bat',
-	)):
-	
-	// Post data to a resource path
-	API::post('another/resource/path', array(
-		'id'   => 5,
-		'name' => 'Ben Corlett',
+	// Create a new person
+	$person = API::post('people', array(
+		'name' => 'Ben',
 		'age'  => 20,
 	));
+	
+	// Get person with ID 1
+	API::get('poeple/1');
+	
+	// Update person with ID 1
+	API::put('people/1', array(
+	
+		// Ben's turned 21!
+		'age' => 21,
+	));
+	
+	// Delete person with ID 1
+	API::delete('people/1');
 
->**Notes:** The URI string is prepended with `api/` to determine the actual URI string. `some/resource/path` will actually route to `api/some/resource/path`. Absence of `api/` is purely for convenience.
+>**Notes:** The URI string is prepended with `api/` to determine the actual URI string. `some/resource/path` will actually route to `api/some/resource/path`. Absence of `api/` is purely for convenience. In fact, Platform is so awesome, that you can even configure `api/` to be something else. See the `paths.php` file within your Platform installation's root folder.
 
 You can use any number of [HTTP verbs](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) you want, just use the `API::call()` method:
 
 	// The second parameter is the 
-	API::call('some/resource/path', 'HEAD', array(
+	API::call('some/resource/path', 'TRACE', array(
 		'foo' => 'bar',
 		'baz' => 'bat',
 	));

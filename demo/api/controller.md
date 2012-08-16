@@ -7,60 +7,51 @@
 For our API to work, we need to create an API controller.
 
 Our API is going to respond to the following resource paths:
+	
+	// Reading book(s)
+	GET    /api/books
+	GET    /api/books/:id
 
-	GET  /api/books
-	POST /api/books
-	GET  /api/books/datatable
+	// Creating a book
+	POST   /api/books
+	
+	// Updating a book
+	PUT    /api/books/:id
+	
+	// Deleting a book
+	DELETE /api/books/:id
+	
+	// Return information for
+	// a books datatable
+	GET    /api/books/datatable
 
 #####GET /api/books
 
-If the ID of a book is passed through as a parameter, we return that book. If the ID isn't passed through, we return all books.
+Return an array of all books
+
+#####GET /api/books/:id
+
+Returns a single book, by the given ID. For example, `/api/books/3` returns a book with the ID, 3.
 
 #####POST /api/books
 
-This method is used to create or update a book. Information is passed through about the book and we create or update a model instance accordingly and return the created model instance.
+This method is used to create a book. Information is passed through about the book and we create or update a model instance accordingly and return the created model instance.
+
+#####PUT /api/books/:id
+
+This method is identical to `POST /api/books` except you provide the ID of a book to update.
+
+#####DELETE /api/books/:id
+
+This method is used to delete a book by the given ID.
 
 #####GET /api/books/datatable
 
 This method returns an array of information used for creating a "Platform Table" - an AJAX driven table used for displaying records in the administration interface.
 
-####Creating controller
+####Creating the Controller
 
 API controllers in Platform work identically to a [RESTful Laravel Controller](http://laravel.com/docs/controllers#restful-controllers). API controllers must extend a base class called `API_Controller`.
-
-#####A little detour
-
-Convention states that all methods in an API controller should return an array. The contents of this array depend on whether the request was successful.
-
-If the request wasn't successful, the return format is like so:
-
-	return array(
-		
-		// Return the status key
-		'status' => false,
-		
-		// A message is *required* (in the sense that controllers expect a message to give
-		// to the user). You should provide a message where possible for consistency.
-		'message' => 'A descriptive error message talking 
-	);
-
-If the request was successful, the format is like so:
-
-	return array(
-	
-		// We return the status key
-		'status' => true,
-		
-		// Aaannd from here, return whatever you
-		// need to
-		'foo' => array(
-			'bar' => 'baz',
-		),
-		
-		'another' => 'value',
-	);
-
-#####Down to business
 
 Let's get into writing some code! Navigate to `books/controllers/api` and create a file called `books.php`. We'll start by making our methods to correspond to the resource paths:
 
