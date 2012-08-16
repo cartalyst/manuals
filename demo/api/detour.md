@@ -36,7 +36,7 @@ All "unsuccessful" requests MUST a `Response` where the first parameter is an ar
 		// be an array.
 		'errors' => array(
 			'Field a was missing',
-			'You didn't provide an email address',
+			"You didn't provide an email address",
 		),
 	),
 	
@@ -76,34 +76,47 @@ The following scenario is and example where we're trying to update a `Car` entit
 		return new Response(array(
 			'message' => "Car [$id] coud not be found.",
 		), API::STATUS_NOT_FOUND);
-
-
-If the request wasn't successful, the return format is like so:
-
-	return array(
-		
-		// Return the status key
-		'status' => false,
-		
-		// A message is *required* (in the sense that controllers expect a message to give
-		// to the user). You should provide a message where possible for consistency.
-		'message' => 'A descriptive error message talking 
-	);
-
-If the request was successful, the format is like so:
-
-	return array(
+	}
 	
-		// We return the status key
-		'status' => true,
+	// Update the car's attributes
+	$car->fill(Input::get());
+	
+	// See if the car saves
+	if ($car->save())
+	{
+		// Return the updated car.
+		// API::STATUS_OK is not required
+		// as it's the default second
+		// parameter of Response::__construct()
+		return new Response($car);
+	}
+	else
+	{
+		// Flag whether there were validation errors
+		$has_errors = $car->validation()->errors->has();
 		
-		// Aaannd from here, return whatever you
-		// need to
-		'foo' => array(
-			'bar' => 'baz',
-		),
+		// If there were errors, we'll return that
+		// response
+		if ($has_errors)
+		{
+			return new Response(array(
+				'message' => 'Validation failed while updating the car.',
+				
+				// Note the 'errors' param
+				'errors' => $car->validation()->errors->all(),
+			), API::STATUS_UNPROCESSABLE_ENTITY);
+		}
 		
-		'another' => 'value',
-	);
+		// If there weren't Validation errors and
+		// the car didn't save, return a general
+		// error status
+		else
+		{
+			return new Response(array(
+				'message' => 'An error occured while updating the car.',
+			), API::STATUS_BAD_REQUEST);
+		}
+	}
+
 
 ----------
