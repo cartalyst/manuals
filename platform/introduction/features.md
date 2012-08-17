@@ -1,3 +1,6 @@
+A fully featured user management system built with our very own Sentry authorization and authentication class. Complete with group management and a fully awesome permission system.
+=======
+
 ###Features
 
 Platform is an application base. Out of the box you will receive everything you would normally need to build saving you countless time and energy. Supported by Cartalyst LLC you can feel comfortable knowing it is both community driven backed by a team of full time developers and designers, fostering an atmosphere for an established and well maintained code base.
@@ -11,7 +14,7 @@ Platform is an application base. Out of the box you will receive everything you 
 A generic installation system that you can modify to suit your needs, out of the box it provides a step based process for providing the default information for your application.
 
 #####Administrative Backend
-The backend is an administrative template to manage and build your applications unique admin only extensions. It is well organized and easily extended. Designed with twitter bootstrap and the Laravel blade template engine.
+The backend is an administrative template to manage and build your application's unique admin-only extensions. It is well organized and easily extended. Designed with Twitter bootstrap and the Laravel blade template engine.
 
 #####Extension Manager
 The extension manager gives a synopsis of both core and 3rd party extensions built for platform.
@@ -30,3 +33,5 @@ A fully featured data table system that you can simply pass json to and it will 
 
 #####User Management
 A fully featured user management system built with our very own Sentry authorization and authentication class. Complete with group management and a fully awesome permission system.
+
+----------
