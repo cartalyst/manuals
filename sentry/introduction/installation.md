@@ -4,8 +4,8 @@
 
 Once downloaded, you will probably want to autoload the bundle by adding the following code to your application bundles.php file.
 
+
 	'sentry' => array(
-		'location' => 'path: path/to/sentry',
 		'auto'     => true,
 	),
 
