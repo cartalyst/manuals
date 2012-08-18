@@ -2,4 +2,4 @@
 
 ----------
 
-purchase information will go here
+Coming soon!
