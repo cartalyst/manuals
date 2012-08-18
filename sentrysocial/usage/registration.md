@@ -20,4 +20,4 @@ If the user is not logged in, and doesn't have an account their authentication i
 
 #### User is not logged in, does not have an account, but the provider gave us an email
 
-If the user is not logged in, doesn't have a sentry account, but the provider gives us an email, we can auto create a an account for them with no further input.  It will be like a registration process didn't occur.  If you still wish to have more fields, you can ask for the extra input afterwards.
+If the user is not logged in, doesn't have a sentry account, but the provider gives us an email, we can auto create an account for them with no further input.  It will be like a registration process did not occur.  If you still wish to have more fields, you can ask for the extra input afterwards.
