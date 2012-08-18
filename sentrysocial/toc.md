@@ -3,3 +3,4 @@
 
 * [Introduction](/manuals/sentrysocial/introduction)
 * [Usage](/manuals/sentrysocial/usage)
+* [License](/manuals/sentrysocial/license)

@@ -8,7 +8,6 @@ SentrySocial is a Laravel bundle used to add social authentication to the Sentry
 ####OAuth
 - Dropbox
 - Flickr
-- Google
 - LinkedIn
 - Tumblr
 - Twitter
