@@ -8,11 +8,11 @@ Step 1 is setting up your system for the installation process.  This just includ
 
 Files and Directories to be modified for platform Installation:
 
-`C:\wamp\www\work\platform\platform\application\config\application.php`
+`platform/application/config/`
 
-`C:\wamp\www\work\platform\platform\application\config\database.php`
+`platform/application/config/application.php`
 
-`C:\wamp\www\work\platform\public\platform\themes\compiled\`
+`public/platform/themes/compiled/`
 
 Once these permissions are set, you can proceed onto Step 2.
 

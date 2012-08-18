@@ -10,6 +10,9 @@ Once downloaded, you will probably want to autoload the bundle by adding the fol
 	),
 
 Installing the tables for sentry is as simple as running its migration.
-<br>
+
+
+	php artisan migrate sentry
+
 <br>
 >**Note:** If you wish to change the default table names, you may adjust them in the configuration file.

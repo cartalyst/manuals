@@ -6,7 +6,7 @@ Download Crud into your Laravel installation's [bundles](http://laravel.com/docs
 
 There are 3 ways to download Crud:
 
-1. [Download](https://github.com/cartalyst/crud/zipball/1.0) a zip archive from our [GitHub repo](https://github.com/cartalyst/crud)
+1. [Download](https://github.com/cartalyst/crud/zipball/master) a zip archive from our [GitHub repo](https://github.com/cartalyst/crud)
 2. Run the following [git](http://git-scm.com) command from your Laravel installation's **bundles** directory:  
 
        $ git clone git@github.com:cartalyst/crud.git

@@ -2,7 +2,7 @@
 
 ----------
 
-Remember me sets a cookie to keep the user logged in for a designated length of time. This feature contains the following options.
+The properties that Sentry uses in the Session can be changed from their defaults should you wish to do so. A reason for this could be if they are conflicting with another session property you are using.
 
 <table>
 	<tr>

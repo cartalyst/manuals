@@ -1,8 +1,8 @@
-###get_children($limit = false)
+###children($limit = false)
 
 ----------
 
-The `get_children` method returns an `array` of children Nesty objects for the Nesty object on which this method was called.
+The `children` method returns an `array` of children Nesty objects for the Nesty object on which this method was called.
 
 
 > <strong>**Notes:**</strong>	This method alone demonstrates one of the best features of the <strong>modified preorder tree traversal algorithm</strong> (the nested sets pattern Nesty uses). We can recursively grab every single child Nesty using the one database query! What does this mean? It's super fast!
@@ -27,7 +27,7 @@ Parameters                   | Type            | Default       | Description
 	});
 
 	// Print children objects
-	print_r($ford->get_children());
+	print_r($ford->children());
 
 	/**
 	 * The aboove line outputs the array
@@ -37,7 +37,7 @@ Parameters                   | Type            | Default       | Description
 	 * just for demonstation purposes.
 	 *
 	 * Additionally, if the person called
-	 * $ford->get_children(1), it would
+	 * $ford->children(1), it would
 	 * limit the recursion level to not
 	 * show the children array of the
 	 * 'Territory' model below.
