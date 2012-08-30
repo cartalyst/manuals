@@ -17,7 +17,7 @@ tree                         | string          | tree_id       | The tree identi
 	class Model_Car extends Nesty
 	{
 		// Set the table name
-		protected static $_table_name = 'cars';
+		protected static $_table = 'cars';
 	}
 
 #####Slightly more configured Nesty Model:
@@ -25,7 +25,7 @@ tree                         | string          | tree_id       | The tree identi
 	class Model_Car extends Nesty
 	{
 		// Set the table name
-		protected static $_table_name = 'cars';
+		protected static $_table = 'cars';
 
 		// Sets the rules
 		protected static $_rules = array(
@@ -39,13 +39,16 @@ tree                         | string          | tree_id       | The tree identi
 
 		/**
 		 * Override the nesty cols in the
-		 * database
+		 * database. If you override this property
+		 * you must specify all four keys (left, right,
+		 * name and tree). The defaults are provided
+		 * in the comments.
 		 */
 		protected static $_nesty_cols = array(
-			'left'  => 'left_limit',
-			'right' => 'right_limit',
-			'name'  => 'label',
-			'tree'  => 'tree_id',
+			'left'  => 'left_limit',   // Default is `lft`
+			'right' => 'right_limit',  // Default is `rgt`
+			'name'  => 'car_name',     // Default is `name`
+			'tree'  => 'car_range_id', // Default is `tree_id`
 		);
 	}
 
