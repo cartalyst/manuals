@@ -18,8 +18,10 @@ Parameters                   | Type            | Default       | Description
 	{
 	    $group = Sentry::group(4);
 	    $update = $group->update(array(
-	        'name'  => 'New Name',
-	        'level' => 100,
+	        'name'        => 'New Name',
+	        'permissions' => array(
+	        	'is_admin' => 1,
+	        ),
 	    ));
 
 	    if ($update)

@@ -16,9 +16,9 @@ Parameters                   | Type            | Default       | Description
 	// get group information
 	try
 	{
-	    $group_level = Sentry::group(2)->get('level');
-	    //or
-	    $group_info = Sentry::group(2)->get(array('name', 'level'));
+		$group_info = Sentry::group(2)->get('name');
+		//or
+	    $group_info = Sentry::group(2)->get(array('name', 'permissions'));
 	    //or
 	    $group_info = Sentry::group(2)->get();
 	}
