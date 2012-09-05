@@ -47,7 +47,6 @@ tree                         | string          | tree_id       | The tree identi
 		protected static $_nesty_cols = array(
 			'left'  => 'left_limit',   // Default is `lft`
 			'right' => 'right_limit',  // Default is `rgt`
-			'name'  => 'car_name',     // Default is `name`
 			'tree'  => 'car_range_id', // Default is `tree_id`
 		);
 	}
