@@ -1,4 +1,4 @@
-#The Platform Social Manual
+#Platform Social Manual
 ##Social Authentication built for Platform
 
 * [Introduction](/manuals/platformsocial/introduction)
