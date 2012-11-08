@@ -23,7 +23,7 @@ Example of displaying last 5 registered users in an existing dashboard. Note tha
 
 	<!-- Page Title -->
 	@section('title')
-		{{ Lang::line('dashboard::dashboard.title') }}
+		{{ Lang::line('platform/dashboard::dashboard.title') }}
 	@endsection
 
 	<!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
@@ -42,7 +42,7 @@ Example of displaying last 5 registered users in an existing dashboard. Note tha
 	@section ('content')
 		<!-- get last 5 registered users -->
 		<div id="users">
-			@widget('platform.users::registered.last', 5)
+			@widget('platform/users::registered.last', 5)
 		</div>
 	@endsection
 

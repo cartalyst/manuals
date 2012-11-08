@@ -4,6 +4,7 @@ Clone the repo and be sure to include submodules, `git clone --recursive git://g
 
 For older versions of Git:
 
-	git clone git://github.com/cartalyst/platform.git
-	cd your_repo_dir
+	git clone --recursive git://github.com/cartalyst/platform.git
+	cd platform
 	git submodule update --init
+	

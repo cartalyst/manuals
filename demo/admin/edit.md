@@ -40,7 +40,7 @@ Now, let's visit the `get_edit()` method:
 			}
 		}
 
-		return Theme::make('books::edit')
+		return Theme::make('platform/books::edit')
 		            ->with('book', $book)
 		            ->with('book_id', (isset($book['id']) and $book['id']) ? $book['id'] : false);
 	}
@@ -52,13 +52,13 @@ Below is an edit view we could use:
 	@layout('templates.default')
 
 	@section('title')
-		{{ Lang::line('books::books.'.($book_id ? 'update' : 'create').'.title') }}
+		{{ Lang::line('platform/books::books.'.($book_id ? 'update' : 'create').'.title') }}
 	@endsection
 
 	<!-- Scripts -->
 	@section('scripts')
 		{{ Theme::queue_asset('bootstrap-tab', 'js/bootstrap/tab.js', 'jquery') }}
-		{{ Theme::queue_asset('books-edit', 'books::js/edit.js', array('jquery', 'bootstrap-tab')) }}
+		{{ Theme::queue_asset('books-edit', 'platform/books::js/edit.js', array('jquery', 'bootstrap-tab')) }}
 	@endsection
 
 	@section('content')
@@ -66,8 +66,8 @@ Below is an edit view we could use:
 
 		<header class="head row">
 			<div class="span4">
-				<h1>{{ Lang::line('books::books.'.($book_id ? 'update' : 'create').'.title') }}</h1>
-				<p>{{ Lang::line('books::books.'.($book_id ? 'update' : 'create').'.description') }}</p>
+				<h1>{{ Lang::line('platform/books::books.'.($book_id ? 'update' : 'create').'.title') }}</h1>
+				<p>{{ Lang::line('platform/books::books.'.($book_id ? 'update' : 'create').'.description') }}</p>
 			</div>
 		</header>
 
@@ -78,10 +78,10 @@ Below is an edit view we could use:
 
 			<ul class="nav nav-tabs">
 				<li class="active">
-					<a href="#books-general" data-toggle="tab">{{ Lang::line('books::books.tabs.general') }}</a>
+					<a href="#books-general" data-toggle="tab">{{ Lang::line('platform/books::books.tabs.general') }}</a>
 				</li>
 				<li>
-					<a href="#books-cover" data-toggle="tab">{{ Lang::line('books::books.tabs.cover') }}</a>
+					<a href="#books-cover" data-toggle="tab">{{ Lang::line('platform/books::books.tabs.cover') }}</a>
 				</li>
 			</ul>
 
@@ -92,32 +92,32 @@ Below is an edit view we could use:
 
 						<fieldset>
 
-							{{ Form::label('title', Lang::line('books::books.general.book_title')) }}
-							{{ Form::text('title', Input::old('title', array_get($book, 'title')), array('placeholder' => Lang::line('books::books.general.book_title'))) }}
+							{{ Form::label('title', Lang::line('platform/books::books.general.book_title')) }}
+							{{ Form::text('title', Input::old('title', array_get($book, 'title')), array('placeholder' => Lang::line('platform/books::books.general.book_title'))) }}
 
-							{{ Form::label('author', Lang::line('books::books.general.author')) }}
-							{{ Form::text('author', Input::old('author', array_get($book, 'author')), array('placeholder' => Lang::line('books::books.general.author'))) }}
+							{{ Form::label('author', Lang::line('platform/books::books.general.author')) }}
+							{{ Form::text('author', Input::old('author', array_get($book, 'author')), array('placeholder' => Lang::line('platform/books::books.general.author'))) }}
 
-							{{ Form::label('description', Lang::line('books::books.general.book_description')) }}
-							{{ Form::textarea('description', Input::old('description', array_get($book, 'description')), array('placeholder' => Lang::line('books::books.general.book_description'))) }}
+							{{ Form::label('description', Lang::line('platform/books::books.general.book_description')) }}
+							{{ Form::textarea('description', Input::old('description', array_get($book, 'description')), array('placeholder' => Lang::line('platform/books::books.general.book_description'))) }}
 
-							{{ Form::label('link', Lang::line('books::books.general.link')) }}
-							{{ Form::url('link', Input::old('link', array_get($book, 'link')), array('placeholder' => Lang::line('books::books.general.link'))) }}
+							{{ Form::label('link', Lang::line('platform/books::books.general.link')) }}
+							{{ Form::url('link', Input::old('link', array_get($book, 'link')), array('placeholder' => Lang::line('platform/books::books.general.link'))) }}
 
-							{{ Form::label('price', Lang::line('books::books.general.price')) }}
+							{{ Form::label('price', Lang::line('platform/books::books.general.price')) }}
 
 							<div class="controls">
 								<div class="input-prepend">
 									<span class="add-on">$</span>
-									{{ Form::number('price', Input::old('price', array_get($book, 'price')), array('placeholder' => Lang::line('books::books.general.price'), 'min' => 0, 'step' => '0.50', 'class' => 'input-small')) }}
+									{{ Form::number('price', Input::old('price', array_get($book, 'price')), array('placeholder' => Lang::line('platform/books::books.general.price'), 'min' => 0, 'step' => '0.50', 'class' => 'input-small')) }}
 								</div>
 							</div>
 
-							{{ Form::label('Publisher', Lang::line('books::books.general.publisher')) }}
-							{{ Form::text('publisher', Input::old('publisher', array_get($book, 'publisher')), array('placeholder' => Lang::line('books::books.general.publisher'))) }}
+							{{ Form::label('Publisher', Lang::line('platform/books::books.general.publisher')) }}
+							{{ Form::text('publisher', Input::old('publisher', array_get($book, 'publisher')), array('placeholder' => Lang::line('platform/books::books.general.publisher'))) }}
 
-							{{ Form::label('Year', Lang::line('books::books.general.year')) }}
-							{{ Form::number('year', (Input::old('year', array_get($book, 'year'))) ?: date('Y'), array('placeholder' => Lang::line('books::books.general.year'), 'min' => 1600, 'max' => date('Y'))) }}
+							{{ Form::label('Year', Lang::line('platform/books::books.general.year')) }}
+							{{ Form::number('year', (Input::old('year', array_get($book, 'year'))) ?: date('Y'), array('placeholder' => Lang::line('platform/books::books.general.year'), 'min' => 1600, 'max' => date('Y'))) }}
 
 						</fieldset>
 
@@ -126,7 +126,7 @@ Below is an edit view we could use:
 
 				<div class="tab-pane" id="books-cover">
 					<div id="upload-cover" class="{{ array_get($book, 'cover') ? 'hide' : null }}">
-						{{ Form::label('cover', Lang::line('books::books.general.cover')) }}
+						{{ Form::label('cover', Lang::line('platform/books::books.general.cover')) }}
 						{{ Form::file('cover') }}
 					</div>
 					<div>
@@ -141,7 +141,7 @@ Below is an edit view we could use:
 											<div class="caption">
 												<h5>{{ $book['cover'] }}</h5>
 												<a href="#" class="btn btn-danger" id="remove-existing-cover">
-													{{ Lang::line('books::books.delete.cover') }}
+													{{ Lang::line('platform/books::books.delete.cover') }}
 												</a>
 											</div>
 										</div>
@@ -150,7 +150,7 @@ Below is an edit view we could use:
 							</div>
 
 							<a href="#" class="btn hide" id="undo-remove-existing-cover">
-								{{ Lang::line('books::books.delete.undo_cover') }}
+								{{ Lang::line('platform/books::books.delete.undo_cover') }}
 							</a>
 						@endif
 					</div>
@@ -158,7 +158,7 @@ Below is an edit view we could use:
 			</div>
 
 			<div class="form-actions">
-				{{ Form::button(Lang::line('books::books.button.'.(($book_id) ? 'update' : 'create')), array('class' => 'btn btn-primary')) }}
+				{{ Form::button(Lang::line('platform/books::books.button.'.(($book_id) ? 'update' : 'create')), array('class' => 'btn btn-primary')) }}
 				{{ HTML::link(ADMIN.'/books', 'Cancel', array('class' => 'btn')) }}
 			</div>
 
@@ -248,7 +248,7 @@ The section action, `post_edit()` is where the magic happens:
 			{
 				API::put('books/'.$id, $data);
 
-				Platform::messages()->success(Lang::line('books::books.update.success')->get());
+				Platform::messages()->success(Lang::line('platform/books::books.update.success')->get());
 			}
 
 			// If there isn't an ID, we're
@@ -257,7 +257,7 @@ The section action, `post_edit()` is where the magic happens:
 			{
 				API::post('books', $data);
 
-				Platform::messages()->success(Lang::line('books::books.create.success')->get());
+				Platform::messages()->success(Lang::line('platform/books::books.create.success')->get());
 			}
 		}
 		catch (APIClientException $e)

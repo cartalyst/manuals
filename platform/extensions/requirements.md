@@ -24,12 +24,15 @@ Here is an example extension.php file for a users extension.
 		),
 
 		'dependencies' => array(
-			'menus',
+			'platform/menus',
+		),
+		
+		'overrides' => array(
+			'platform/dashboard',
 		),
 
 		'bundles' => array(
 			'handles' => 'users',
-			'location' => 'path: '.__DIR__,
 		),
 
 		'events' => array(
@@ -47,17 +50,17 @@ Here is an example extension.php file for a users extension.
 		},
 
 		'global_routes' => function() {
-			Route::any(ADMIN.'/login', 'users::admin.users@login');
-			Route::any(ADMIN.'/logout', 'users::admin.users@logout');
+			Route::any(ADMIN.'/login', 'platform/users::admin.users@login');
+			Route::any(ADMIN.'/logout', 'platform/users::admin.users@logout');
 		},
 
 		'rules' => array(
 			'random_rule',
-			'users::admin.users@index',
-			'users::admin.users@create',
-			'users::admin.users@edit',
-			'users::admin.users@delete',
-			'users::admin.groups@index',
+			'platform/users::admin.users@index',
+			'platform/users::admin.users@create',
+			'platform/users::admin.users@edit',
+			'platform/users::admin.users@delete',
+			'platform/users::admin.groups@index',
 		),
 
 	);
@@ -65,6 +68,8 @@ Here is an example extension.php file for a users extension.
 - `info` The info array stores basic information about your extension.  This will be pulled into the database during installation.
 
 - `dependencies` The dependencies array contains a list of extensions that the current extension requires.
+
+- `overrides` The extensions that this extension overrides. All controller and API calls on track for those extensions will be re-routed to this extension first. If this extension is unable to respond to the controller and API calls, it defaults back to the extension that's being overridden.
 
 - `bundles` The bundles array is what you are accustomed to seeing in the main application bundle's bundle.php file.  Instead of manually adding each extension you have into that file, we made more modular friendly to where you can add the settings here instead.
 

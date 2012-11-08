@@ -34,7 +34,7 @@ Platform comes with it's own great jQuery plugin that allows you to manage items
 		if (Request::ajax())
 		{
 			return json_encode(array(
-				'content'        => Theme::make('books::partials.table_books', $data)->render(),
+				'content'        => Theme::make('platform/books::partials.table_books', $data)->render(),
 				'count'          => $datatable['count'],
 				'count_filtered' => $datatable['count_filtered'],
 				'paging'         => $datatable['paging'],
@@ -42,7 +42,7 @@ Platform comes with it's own great jQuery plugin that allows you to manage items
 		}
 
 		// Return the books list view
-		return Theme::make('books::index', $data);
+		return Theme::make('platform/books::index', $data);
 	}
 
 In the admin controller method above, you'll have noticed that we have returned two Theme views. Let's go ahead and create the following two files:
@@ -83,7 +83,7 @@ Knowing this, let's go and create our list template
 	@layout('templates.default')
 
 	@section('title')
-		{{ Lang::line('books::books.general.title') }}
+		{{ Lang::line('platform/books::books.general.title') }}
 	@endsection
 
 	@section('links')
@@ -93,7 +93,7 @@ Knowing this, let's go and create our list template
 	<!-- Scripts -->
 	@section('scripts')
 		{{ Theme::queue_asset('table', 'js/table.js', 'jquery') }}
-		{{ Theme::queue_asset('books-index', 'books::js/index.js', array('jquery', 'table')) }}
+		{{ Theme::queue_asset('books-index', 'platform/books::js/index.js', array('jquery', 'table')) }}
 	@endsection
 
 
@@ -102,8 +102,8 @@ Knowing this, let's go and create our list template
 		<!-- Include the title and description for the page -->
 		<header class="head row">
 			<div class="span6">
-				<h1>{{ Lang::line('books::books.general.title') }}</h1>
-				<p>{{ Lang::line('books::books.general.description') }}</p>
+				<h1>{{ Lang::line('platform/books::books.general.title') }}</h1>
+				<p>{{ Lang::line('platform/books::books.general.description') }}</p>
 			</div>
 		</header>
 
@@ -117,7 +117,7 @@ Knowing this, let's go and create our list template
 			<div class="actions clearfix">
 				<div id="table-filters" class="form-inline pull-left"></div>
 				<div class="pull-right">
-					<a class="btn btn-large btn-primary" href="{{ URL::to_secure(ADMIN.'/books/create') }}">{{ Lang::line('books::books.button.create') }}</a>
+					<a class="btn btn-large btn-primary" href="{{ URL::to_secure(ADMIN.'/books/create') }}">{{ Lang::line('platform/books::books.button.create') }}</a>
 				</div>
 			</div>
 
@@ -175,7 +175,7 @@ Open up `public/platform/themes/backend/default/extensions/books/partials/table_
 			<td class="span1">{{ $row['year'] }}</td>
 			<td class="span2">
 				<a class="btn" href="{{ URL::to_secure(ADMIN.'/books/edit/'.$row['id']) }}">{{ Lang::line('button.edit') }}</a>
-				<a class="btn btn-danger" href="{{ URL::to_secure(ADMIN.'/books/delete/'.$row['id']) }}" onclick="return confirm('{{ Lang::line('books::books.delete.confirm') }}');">{{ Lang::line('button.delete') }}</a>
+				<a class="btn btn-danger" href="{{ URL::to_secure(ADMIN.'/books/delete/'.$row['id']) }}" onclick="return confirm('{{ Lang::line('platform/books::books.delete.confirm') }}');">{{ Lang::line('button.delete') }}</a>
 			</td>
 		</tr>
 	@endforeach
@@ -186,7 +186,7 @@ Now, we've done all that markup, we need to include a JavaScript library to hand
 
 To do this, we need to make a file called `index.js` and put it under `public/platform/themes/backend/default/extensions/books/assets/js/index.js`.
 
->**Notes:** Why's it called `index.js`? Because that's what it was called in our template - `{{ Theme::queue_asset('books-index', 'books::js/index.js', array('jquery', 'table')) }}` The first method of `Theme::queue_asset()` is a name to give the asset. The second is the path to the file, where the format is `bundle::path/to/file.js`. The third parameter is an array of dependencies, where each item is the `name` of another asset.
+>**Notes:** Why's it called `index.js`? Because that's what it was called in our template - `{{ Theme::queue_asset('books-index', 'platform/books::js/index.js', array('jquery', 'table')) }}` The first method of `Theme::queue_asset()` is a name to give the asset. The second is the path to the file, where the format is `bundle::path/to/file.js`. The third parameter is an array of dependencies, where each item is the `name` of another asset.
 
 The contents of `index.js` should be:
 

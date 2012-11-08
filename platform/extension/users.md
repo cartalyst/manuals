@@ -17,18 +17,18 @@ The users extension is used to find and edit information about your applications
 ##### Widgets
 
 *Frontend Forms*
-- login:    `@widget('platform.users::form.login')`
-- register: `@widget('platform.users::form.register')`
-- reset:    `@widget('platform.users::form.reset')`
+- login:    `@widget('platform/users::form.login')`
+- register: `@widget('platform/users::form.register')`
+- reset:    `@widget('platform/users::form.reset')`
 
 *Backend Forms*
-- user create:       `@widget('platform.users::admin.users.form.create')`
-- user edit:         `@widget('platform.users::admin.users.form.edit', user_id)`
-- user permissions:  `@widget('platform.users::admin.users.form.permissions', user_id)`
+- user create:       `@widget('platform/users::admin.users.form.create')`
+- user edit:         `@widget('platform/users::admin.users.form.edit', user_id)`
+- user permissions:  `@widget('platform/users::admin.users.form.permissions', user_id)`
 
-- group create:       `@widget('platform.users::admin.groups.form.create')`
-- group edit:         `@widget('platform.users::admin.groups.form.edit', user_id)`
-- group permissions:  `@widget('platform.users::admin.groups.form.permissions', user_id)`
+- group create:       `@widget('platform/users::admin.groups.form.create')`
+- group edit:         `@widget('platform/users::admin.groups.form.edit', user_id)`
+- group permissions:  `@widget('platform/users::admin.groups.form.permissions', user_id)`
 
 ----------
 
@@ -57,15 +57,17 @@ Logs a user in
 
 *Example*
 	
-	$response = API::post('users/login', array(
-		'email'    => 'john.doe@getplatform.com',
-		'password' => 'somepassword',
-		'remember' => 1
-	));
-
-	if ( ! $response['status'])
+	try
 	{
-		// login failed
+		 API::post('users/login', array(
+			'email'    => 'john.doe@getplatform.com',
+			'password' => 'somepassword',
+			'remember' => 1
+		))
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -85,7 +87,14 @@ Logs a user out
 
 *Example*
 	
-	$response = API::get('users/logout');
+	try
+	{
+		 $response = API::get('users/logout');
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
+	}
 
 
 **Reset Password**
@@ -107,17 +116,19 @@ Resets a users password and sends an activation link to activate it.
 </table>
 
 *Example*
+
 	
-	$response = API::post('users/reset_password', array(
-		'email'    => 'john.doe@getplatform.com',
-		'password' => 'somepassword',
-	));
-
-	if ( ! $response['status'])
+	try
 	{
-		// login failed
+		 $response = API::post('users/reset_password', array(
+			'email'    => 'john.doe@getplatform.com',
+			'password' => 'somepassword',
+		));
 	}
-
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
+	}
 
 **Reset Password Confirm**
 Confirms a password reset
@@ -138,15 +149,17 @@ Confirms a password reset
 </table>
 
 *Example*
-	
-	$response = API::post('users/reset_password_confirm', array(
-		'email'    => 'john.doe@getplatform.com',
-		'password' => 'somepasswordhash',
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// login failed
+		$response = API::post('users/reset_password_confirm', array(
+			'email'    => 'john.doe@getplatform.com',
+			'password' => 'somepasswordhash',
+		));
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -171,21 +184,21 @@ Returns users and related data
 </table>
 
 *Example*
-	
-	$response = API::get('users', array(
-		'where' => array(
-			array('id', '>', '5')
-		),
-		'take' => 5,
-		'skip' => 0
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// issue with api request
+		$users = API::get('users', array(
+			'where' => array(
+				array('id', '>', '5')
+			),
+			'take' => 5,
+			'skip' => 0
+		));
 	}
-
-	$users = $response['users'];
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
+	}
 
 
 **Register**
@@ -208,19 +221,21 @@ Register a user and send an email for activation
 
 *Example*
 	
-	$response = API::post('users/register', array(
-		'email'            => 'john.doe@getplatform.com',
-		'password'         => 'somepassword',
-		'password_confirm' => 'somepassword',
-		'metatdata' => array(
-			'first_name' => 'John',
-			'last_name'  => 'Doe',
-		)
-	));
-
-	if ( ! $response['status'])
+	try
 	{
-		// registration failed
+		$response = API::post('users/register', array(
+			'email'            => 'john.doe@getplatform.com',
+			'password'         => 'somepassword',
+			'password_confirm' => 'somepassword',
+			'metatdata' => array(
+				'first_name' => 'John',
+				'last_name'  => 'Doe',
+			)
+		));
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -243,20 +258,22 @@ Create a user
 </table>
 
 *Example*
-	
-	$response = API::post('users/create', array(
-		'email'            => 'john.doe@getplatform.com',
-		'password'         => 'somepassword',
-		'password_confirm' => 'somepassword',
-		'metatdata' => array(
-			'first_name' => 'John',
-			'last_name'  => 'Doe',
-		)
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// create failed
+		$user = API::post('users/create', array(
+			'email'            => 'john.doe@getplatform.com',
+			'password'         => 'somepassword',
+			'password_confirm' => 'somepassword',
+			'metatdata' => array(
+				'first_name' => 'John',
+				'last_name'  => 'Doe',
+			)
+		));
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -279,15 +296,17 @@ Activate a user
 </table>
 
 *Example*
-	
-	$response = API::post('users/activate', array(
-		'email' => $email,
-		'code'  => $code,
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// activation failed
+		$response = API::post('users/activate', array(
+			'email' => $email,
+			'code'  => $code,
+		));
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -310,21 +329,22 @@ Update a user
 </table>
 
 *Example*
-	
-	$response = API::post('users/update', array(
-		'id'               => 1,
-		'email'            => 'john.doe@getplatform.com',
-		'password'         => 'somepassword',
-		'password_confirm' => 'somepassword',
-		'metatdata' => array(
-			'first_name' => 'John',
-			'last_name'  => 'Doe',
-		)
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// update failed
+		$user =  API::put('users/1', array(
+			'email'            => 'john.doe@getplatform.com',
+			'password'         => 'somepassword',
+			'password_confirm' => 'somepassword',
+			'metatdata' => array(
+				'first_name' => 'John',
+				'last_name'  => 'Doe',
+			)
+		));
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -347,14 +367,14 @@ Delete a user
 </table>
 
 *Example*
-	
-	$response = API::post('users/delete', array(
-		'id' => 1,
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// delete failed
+		API::delete('users/1');
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -377,9 +397,16 @@ Retrieve Users Datatable data
 </table>
 
 *Example*
-	
-	// Grab our datatable
-	$response = API::get('users/datatable', Input::get());
+
+	try
+	{
+		// Grab our datatable
+		$response = API::get('users/datatable', Input::get())
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
+	}
 
 	$data = array(
 		'columns' => $response['columns'],
@@ -390,14 +417,14 @@ Retrieve Users Datatable data
 	if (Request::ajax())
 	{
 		return json_encode(array(
-			"content"        => Theme::make('users::user.partials.table_users', $data)->render(),
+			"content"        => Theme::make('platform/users::user.partials.table_users', $data)->render(),
 			"count"          => $response['count'],
 			"count_filtered" => $response['count_filtered'],
 			"paging"         => $response['paging'],
 		));
 	}
 
-	return Theme::make('users::user.index', $data);
+	return Theme::make('platform/users::user.index', $data);
 
 	##### Users
 
@@ -420,21 +447,21 @@ Returns groups and related data
 </table>
 
 *Example*
-	
-	$response = API::get('users/groups', array(
-		'where' => array(
-			array('id', '>', '5')
-		),
-		'take' => 5,
-		'skip' => 0
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// issue with api request
+		$users = API::get('users/groups', array(
+			'where' => array(
+				array('id', '>', '5')
+			),
+			'take' => 5,
+			'skip' => 0
+		));
 	}
-
-	$users = $response['users'];
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
+	}
 
 
 **Create**
@@ -456,16 +483,17 @@ Create a group
 </table>
 
 *Example*
-	
-	$response = API::post('users/groups/create', array(
-		'name' => 'editor',
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// create failed
+		$group = API::post('users/groups', array(
+			'name' => 'editor',
+		));
 	}
-
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
+	}
 
 
 **Update**
@@ -487,16 +515,17 @@ Update a group
 </table>
 
 *Example*
-	
-	$response = API::post('users/groups/update', array(
-		'id'          => 1
-		'name'        => 'editor',
-		'permissions' => array(),
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// create failed
+		$group = API::put('users/groups/1', array(
+			'name'        => 'editor',
+			'permissions' => array(),
+		));
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -519,14 +548,14 @@ Delete a group
 </table>
 
 *Example*
-	
-	$response = API::post('users/groups/delete', array(
-		'id' => 1,
-	));
 
-	if ( ! $response['status'])
+	try
 	{
-		// delete failed
+		API::delete('users/groups/1');
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
 	}
 
 
@@ -549,9 +578,16 @@ Retrieve Groups Datatable data
 </table>
 
 *Example*
-	
-	// Grab our datatable
-	$response = API::get('users/groups/datatable', Input::get());
+
+	try
+	{
+		// Grab our datatable
+		$response = API::get('users/groups/datatable', Input::get());
+	}
+	catch (APIClientException $e)
+	{
+		// Handle exception, may be a 400, 403, 404 etc
+	}
 
 	$data = array(
 		'columns' => $response['columns'],
@@ -562,11 +598,11 @@ Retrieve Groups Datatable data
 	if (Request::ajax())
 	{
 		return json_encode(array(
-			"content"        => Theme::make('users::user.partials.table_users', $data)->render(),
+			"content"        => Theme::make('platform/users::user.partials.table_users', $data)->render(),
 			"count"          => $response['count'],
 			"count_filtered" => $response['count_filtered'],
 			"paging"         => $response['paging'],
 		));
 	}
 
-	return Theme::make('users::groups.index', $data);
+	return Theme::make('platform/users::groups.index', $data);

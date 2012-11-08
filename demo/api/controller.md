@@ -171,7 +171,7 @@ Below is one approach we could take to achieving this:
 			if ($book === null)
 			{
 				return new Response(array(
-					'message' => Lang::line('books::books.errors.not_found')->get(),
+					'message' => Lang::line('platform/books::books.errors.not_found')->get(),
 				), API::STATUS_NOT_FOUND);
 			}
 
@@ -220,7 +220,7 @@ The method should look something like this:
 			return new Response(array(
 
 				// Return a general error message
-				'message' => Lang::line('books::books.create.error')->get(),
+				'message' => Lang::line('platform/books::books.create.error')->get(),
 
 				// This is a shorthand IF statement which returns
 				// validation errors if they're present.
@@ -247,7 +247,7 @@ This method is identical to `post_index()` except that we need to find a book to
 		if ($book === null)
 		{
 			return new Response(array(
-				'message' => Lang::line('books::books.errors.not_found')->get(),
+				'message' => Lang::line('platform/books::books.errors.not_found')->get(),
 			), API::STATUS_NOT_FOUND);
 		}
 
@@ -256,7 +256,7 @@ This method is identical to `post_index()` except that we need to find a book to
 		{
 			// File::delete() checks for
 			// existence of the file.
-			File::delete(str_finish(path('public'), DS).str_finish(Config::get('books::books.covers_path'), DS).$book->cover);
+			File::delete(str_finish(path('public'), DS).str_finish(Config::get('platform/books::books.covers_path'), DS).$book->cover);
 		}
 
 		// Update the attributes
@@ -278,7 +278,7 @@ This method is identical to `post_index()` except that we need to find a book to
 		else
 		{
 			return new Response(array(
-				'message' => Lang::line('books::books.update.error')->get(),
+				'message' => Lang::line('platform/books::books.update.error')->get(),
 				'errors'  => ($book->validation()->errors->has()) ? $book->validation()->errors->all() : array(),
 			), ($book->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
@@ -297,7 +297,7 @@ This method is used to delete a book with the given ID. If successful, we don't 
 		if ($book === null)
 		{
 			return new Response(array(
-				'message' => Lang::line('books::books.errors.not_found')->get(),
+				'message' => Lang::line('platform/books::books.errors.not_found')->get(),
 			), API::STATUS_NOT_FOUND);
 		}
 
@@ -307,7 +307,7 @@ This method is used to delete a book with the given ID. If successful, we don't 
 		{
 			// File::delete() checks for
 			// existence of the file.
-			File::delete(str_finish(path('public'), DS).str_finish(Config::get('books::books.covers_path'), DS).$book->cover);
+			File::delete(str_finish(path('public'), DS).str_finish(Config::get('platform/books::books.covers_path'), DS).$book->cover);
 		}
 
 		// Delete the book
@@ -331,11 +331,11 @@ This method returns a complex response containing an array of items used in the 
 		// query parameters.
 		$defaults = array(
 			'select'   => array(
-				'id'          => Lang::line('books::books.general.id')->get(),
-				'title'       => Lang::line('books::books.general.book_title')->get(),
-				'author'      => Lang::line('books::books.general.author')->get(),
-				'price'       => Lang::line('books::books.general.price')->get(),
-				'year'        => Lang::line('books::books.general.year')->get(),
+				'id'          => Lang::line('platform/books::books.general.id')->get(),
+				'title'       => Lang::line('platform/books::books.general.book_title')->get(),
+				'author'      => Lang::line('platform/books::books.general.author')->get(),
+				'price'       => Lang::line('platform/books::books.general.price')->get(),
+				'year'        => Lang::line('platform/books::books.general.year')->get(),
 			),
 			'where'    => array(),
 			'order_by' => array('id' => 'desc'),

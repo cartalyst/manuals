@@ -6,7 +6,7 @@ What good would **CRU** be? Obviously we need the ability to delete a book.
 
 Remember back in the [List All Books](#list) section we setup the `table_books` partial view? Inside that, we had an anchor setup for each book to delete it:
 
-	<a class="btn btn-danger" href="{{ URL::to_secure(ADMIN.'/books/delete/'.$row['id']) }}" onclick="return confirm('{{ Lang::line('books::books.delete.confirm') }}');">{{ Lang::line('button.delete') }}</a>
+	<a class="btn btn-danger" href="{{ URL::to_secure(ADMIN.'/books/delete/'.$row['id']) }}" onclick="return confirm('{{ Lang::line('platform/books::books.delete.confirm') }}');">{{ Lang::line('button.delete') }}</a>
 
 This shows a button to delete a book, with a JavaScript confirm first. If the user accepts the JavaScript confirm, the person is redirected to the admin screen.
 
@@ -19,7 +19,7 @@ So what's inside that screen? It's pretty straight-forward:
 			// Make a DELETE API request.
 			API::delete('books/'.$id);
 
-			Platform::messages()->success(Lang::line('books::books.delete.success')->get());
+			Platform::messages()->success(Lang::line('platform/books::books.delete.success')->get());
 		}
 		catch (APIClientException $e)
 		{

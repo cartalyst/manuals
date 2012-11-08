@@ -44,13 +44,11 @@ To create a widget or plugin, you just need to create a standard class with the 
 		public function edit($id)
 		{
 			// get user being edited
-			$user = API::get('users', array(
-				'where' => array('users.id', '=', $id)
-			));
+			$user = API::get('users/1');
 
 			...
 
-			return Theme::make('users::widgets.form.edit', $data);
+			return Theme::make('platform/users::widgets.form.edit', $data);
 		}
 
 	}
@@ -67,17 +65,17 @@ Now that we have created a widget or plugin, we need to know how to call it.  To
 
 To call our Form Edit widget, we would do the following call in our view.
 
-	@widget('platform.users::form.edit', 5);
+	@widget('platform/users::form.edit', 5);
 
 There are 2 main sections to the widget or plugins key, before and after the `::`.
 
-Everything that falls before the `::` is the namespace path to your extensions widgets, minus the widget/plugin namespace.  Since the namespace for our widget in this example is `Platform\Users\Widgets`, that means our namespace portion of the key will be `platform.users`.
+Everything that falls before the `::` is the namespace path to your extensions widgets, minus the widget/plugin namespace.  Since the namespace for our widget in this example is `Platform\Users\Widgets`, that means our namespace portion of the key will be `platform/users`.
 
 The 2nd portion of the key is everything that falls afer the `::`. This section simply is your class name and method name.  In our example, we use the class name of `Users` and method of `edit`, so our key portion becomes `users.edit`.
 
-Now that you have your 2 key portions, you just combine them with `::`. So now our key becomes `platform.users::form.edit`;
+Now that you have your 2 key portions, you just combine them with `::`. So now our key becomes `platform/users::form.edit`;
 
-> **Note:** if you use subdirectories to organize your widget and plugins folder, use the PSR-0 naming convention.  This means you append your directory structure to the beginning of your class name with a `_` seperator.  A structure of `widgets\groups\form.php` will have the class name of `Groups_Form`. The new widget call would be @widget('platform.users::groups.form.edit');
+> **Note:** if you use subdirectories to organize your widget and plugins folder, use the PSR-0 naming convention.  This means you append your directory structure to the beginning of your class name with a `_` seperator.  A structure of `widgets\groups\form.php` will have the class name of `Groups_Form`. The new widget call would be @widget('platform/users::groups.form.edit');
 
 
 ----------
@@ -88,22 +86,22 @@ Now that you have your 2 key portions, you just combine them with `::`. So now o
 
 Paramaters with widgets and plugins are slightly different. With widgets, the parameters that get passed to your widget method start with the 2nd paramater in your widget call.
 
-	@widget('key', 'your params start here', 'and continue');
+	@widget('vendor/key', 'your params start here', 'and continue');
 
 With Plugins, they don't start until your 3rd param.
 
-	@plugin('key', 'something', 'your params start here', 'and continue');
+	@plugin('vendor/key', 'something', 'your params start here', 'and continue');
 
 But why is that? Well plugins are made to return data, so we use the 2nd paramater as the variable to store your data in.  So if your plugin retrieves an array of users, you would do something like this:
 
 	// We'll say this plugin grabs the last 5 registered users
-	@plugin('platform.users::users.registered.last', 'users', 5)
+	@plugin('platform/users::users.registered.last', 'users', 5)
 
 	// Now those 5 users are stored in the $users variable
 	// We'll loop through the array and do something with it
-	{{ foreach ($users as $user) }}
+	@foreach ($users as $user)
 
 		// do something with the data you recieved
 		...
 
-	{{ endforeach }}
+	@endforeach

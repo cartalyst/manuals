@@ -53,7 +53,7 @@ Our `model.php` file should look something like below. It's essentially a pretty
 		 */
 		public static function covers_path()
 		{
-			return str_finish(path('public'), DS).Config::get('books::books.covers_path');
+			return str_finish(path('public'), DS).Config::get('platform/books::books.covers_path');
 		}
 
 		/**
@@ -107,7 +107,7 @@ Our `model.php` file should look something like below. It's essentially a pretty
 			if (isset($result->cover) and $result->cover and File::exists($cover_path = str_finish(static::covers_path(), DS).$result->cover))
 			{
 				$result->cover_path = $cover_path;
-				$result->cover_url  = URL::to_asset(str_replace(DS, '/', str_finish(Config::get('books::books.covers_path'), DS).$result->cover));
+				$result->cover_url  = URL::to_asset(str_replace(DS, '/', str_finish(Config::get('platform/books::books.covers_path'), DS).$result->cover));
 			}
 
 			return $result;
@@ -129,7 +129,7 @@ Our `model.php` file should look something like below. It's essentially a pretty
 				if (isset($result->cover) and $result->cover and File::exists($cover_path = str_finish(static::covers_path(), DS).$result->cover))
 				{
 					$result->cover_path = $cover_path;
-					$result->cover_url  = URL::to_asset(str_replace(DS, '/', str_finish(Config::get('books::books.covers_path'), DS).$result->cover));
+					$result->cover_url  = URL::to_asset(str_replace(DS, '/', str_finish(Config::get('platform/books::books.covers_path'), DS).$result->cover));
 				}
 			}
 

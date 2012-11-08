@@ -21,15 +21,17 @@ A platform theme is structured like so:
 	|  |  img
 	|  |  js
 	|  extensions
-	|  |  extension1
-	|  |  |  assets
-	|  |  |  |  css
-	|  |  |  |  img
-	|  |  |  |  js
-	|  |  |  template1.blade.php
-	|  |  |  template2.blade.php
-	|  |  extension2
-	|  |  extension3
+	|  |  vendor1
+	|  |  |  extension1
+	|  |  |  |  assets
+	|  |  |  |  |  css
+	|  |  |  |  |  img
+	|  |  |  |  |  js
+	|  |  |  |  template1.blade.php
+	|  |  |  |  template2.blade.php
+	|  |  |  extension2
+	|  |  vendor2
+	|  |  |  extension3
 	|  templates
 	|  |  default.blade.php
 	|  theme.info
@@ -41,7 +43,8 @@ Let's explain the files required in a Platform theme in a little more detail:
 1. `name` is the name of your theme
 2. `name/assets` is the global assets folder. Any assets that should / could be shared between extensions should be placed here.
 3. `name/extensions` is a folder in which we place all of our extensions' theme files within.
-4. `name/extensions/extension1` is an example extension. It has the following file structure:
+4. `name/extensions/vendor1` is an example vendor. As of Platform 1.1, extensions are organized into vendors.
+4. `name/extensions/vendor1/extension1` is an example extension. It has the following file structure:
    - `assets` is the folder within the extension where all it's assets live. This folder's contents are the same as the `name/assets` folder listed earlier.
    - `template1.blade.php` is an extension's template file. It contains HTML, helper tags and commands to add assets to the template.
 5. `name/templates/default.blade.php` is the default template your extension files will extend. We'll cover this more in depth later on. We use Laravel's [Blade templating engine](http://laravel.com/docs/views/templating) for our templates, but you don't have to.

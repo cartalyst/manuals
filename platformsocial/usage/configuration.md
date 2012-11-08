@@ -42,4 +42,4 @@ Once a provider is listed, the widget will add it to be displayed automatically 
 
 Once you are done configuring your providers, you just need to make a widget call to display the social login form wherever you want it.  Simply make the following call and you are all done!
 
-	@widget('platform.social::form.login')
+	@widget('cartalyst/social::form.login')
