@@ -5,9 +5,9 @@
 ####What Are Themes?
 Themes allow you to "skin" or change the look of your Platform application.
 
-Platform allows you to change much more than the style of your application through it's theme class. We built Platform to be designer friendly and as a result of this, designers have the power to change the applicatin without knowing complex object-orientated PHP. With HTML, CSS (or [LESS](http://less.org) if you're not still partying like it's 1999) and a bunch of expressive helper tags you can fully customize your app.
+Platform allows you to change much more than the style of your application through it's theme class. We built Platform to be designer friendly and as a result of this, designers have the power to change the application without knowing complex object-orientated PHP. With HTML, CSS (or [LESS](http://less.org) if you're not still partying like it's 1999) and a bunch of expressive helper tags you can fully customize your app.
 
-You can create an unlimited amout of themes in Platform. To get you going though, we've created two `default` themes for you, one for the frontend of cartalyst and one for the backend (admin) area.
+You can create an unlimited amount of themes in Platform. To get you going though, we've created two `default` themes for you, one for the frontend of cartalyst and one for the backend (admin) area.
 
 You can create your own themes that extend our default themes, giving you the option to override just one `template` file or overriding every single file.
 
@@ -16,7 +16,7 @@ You can create your own themes that extend our default themes, giving you the op
 A platform theme is structured like so:
 
 	name
-	|  asseets
+	|  assets
 	|  |  css
 	|  |  img
 	|  |  js
