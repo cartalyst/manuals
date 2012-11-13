@@ -73,12 +73,12 @@ Here is an example extension.php file for a users extension.
 
 - `bundles` The bundles array is what you are accustomed to seeing in the main application bundle's bundle.php file.  Instead of manually adding each extension you have into that file, we made more modular friendly to where you can add the settings here instead.
 
-- `events` The events array contains the names of events your extension fires.  Creating this array of events for your extension allows other extensions to see what events your extension uses.  This comes in handy for extensions that may want to capture all of another extensions events, or every event in the system.  They can now build listeners dynamically rather than manually.
+- `events` The events array contains the names of events that your extension fires.  Creating this array of events for your extension allows other extensions to see what events your extension uses.  This comes in handy for extensions that may want to capture all of another extensions events, or every event in the system.  They can now build listeners dynamically rather than manually.
 
 - `listeners` Does your extension want to listen to events other extensions may be firing? Throw them into this listeners function so Platform knows that your extension wants to do something when those events. Platform scans for and registers these events for you. *Note: These listeners are contained in a function rather than an array*.
 
 - `global_routes` Each extension can still have its own routes.php file which can contain routing logic for that specific extension. But, what if you want to also add routes to the global routing? Thats what global routes are for.  These routes will be equivalent to the routes you put into the main application bundle's route.php file.  They are loaded after the main applications bundle route though. *Note: These routes are contained in a function rather than an array*.
 
-- `rules` The rules array contains rules, or permissions users must have, in order to view a certain area of your extension.  How rules work you can find out in the Sentry portion of our documentation.  Simply put though, if you want to add a rule to your extension, you add it to this array.
+- `rules` The rules array contains rules, or permissions users must have, in order to view a certain area of your extension.  You can learn more about how rules work in the Sentry portion of our documentation. Simply put though, if you want to add a rule to your extension, you add it to this array.
 
 ----------

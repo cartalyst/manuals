@@ -2,7 +2,7 @@
 
 ----------
 
-Widgets and Plugins are new systems we built into laravel.  We feel that our system is really powerful and easy to use. Widgets are used pull in generated views, while plugins will be used to pull in and store requested data to manipulate as you wish.
+Widgets and Plugins are new systems we've built into Laravel.  We feel that our system is really powerful and easy to use. Widgets are used pull in generated views, while plugins will be used to pull in and store requested data to manipulate as you wish.
 
 ----------
 

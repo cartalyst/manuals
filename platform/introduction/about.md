@@ -20,7 +20,7 @@ Platform is an application base, a bootstrap for Laravel. The fundamentals + a f
 * Widgets
 * Plugins
 * Awesome API
-* - Larave33.2.11-    - 
+* Laravel 3.2.11 
   
 
 [Official website & documentation](http://www.getplatform.com)
