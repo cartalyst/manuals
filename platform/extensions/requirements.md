@@ -24,11 +24,11 @@ Here is an example extension.php file for a users extension.
 		),
 
 		'dependencies' => array(
-			'platform/menus',
+			'platform.menus',
 		),
 		
 		'overrides' => array(
-			'platform/dashboard',
+			'platform.dashboard',
 		),
 
 		'bundles' => array(
